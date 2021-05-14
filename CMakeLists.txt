@@ -3,9 +3,8 @@ project(MIPT_navigator)
 
 set(CMAKE_CXX_STANDARD 17)
 
-if (WIN32)
-    set(SFML_DIR ../SFML-2.5.1/lib/cmake/SFML)
-endif()
+set(SFML_DIR ../SFML/lib/cmake/SFML)
+
 
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
