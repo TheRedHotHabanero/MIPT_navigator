@@ -51,7 +51,7 @@ void Menu::welcome_page(const string& menu_background_,
                         const string& checking_odds_button_)
 {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT),
-                        "МФТИ (Московский физкультурный техникум для идиотов) ");
+                        "MIPT UNIVERSITY");
 
     create_menu_background(menu_background_);
     create_exit_button(exit_button_);
