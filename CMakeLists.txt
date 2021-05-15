@@ -10,6 +10,8 @@ find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 add_executable(MIPT_navigator
         main.cpp
         menu.cpp
-        menu.h)
+        menu.h
+        phystech_menu.cpp
+        phystech_menu.h)
 
 target_link_libraries(MIPT_navigator sfml-graphics sfml-audio)

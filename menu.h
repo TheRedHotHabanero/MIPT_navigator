@@ -34,7 +34,7 @@ private:
     const static int EXIT_BUTTON_HEIGHT = 51;
     //--------------------------------------------------------
 
-    //-------------------------checking odds nutton parameters:
+    //-------------------------checking odds button parameters:
     const static int CHECKING_ODDS_BUTTON_POS_X = 245;
     const static int CHECKING_ODDS_BUTTON_POS_Y = 330;
     const static int CHECKING_ODDS_BUTTON_WIDTH = 332;
@@ -73,7 +73,6 @@ public:
     void create_start_info_button(const string& start_info_button_);
     void create_checking_odds_button(const string& checking_odds_button_);
     void create_exit_button(const string& exit_button_);
-    Sprite create_about_page(const string& about_background_);
     //------------------------------------------------------------------
 
     //------------------------------------------------processing bottons:

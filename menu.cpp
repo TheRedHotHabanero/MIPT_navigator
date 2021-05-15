@@ -3,6 +3,7 @@
 //
 
 #include "menu.h"
+#include "phystech_menu.h"
 
 void Menu::create_menu_background(const string &menu_background_)
 {
@@ -63,6 +64,15 @@ void Menu::welcome_page(const string& menu_background_,
 
 void Menu::start_info_button_pressed(RenderWindow &window)
 {
+    //RenderWindow start_info(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Сhoose your physics-school!");
+    //std::cout << "start_info_button_pressed" << std::endl;
+    //window.display();
+    Phystech_Menu phystech_menu;
+    phystech_welcome_page();
+}
+
+void Menu::checking_odds_button_pressed(RenderWindow &window)
+{
     //Game_Menu game_menu;
     /*
     game_menu.game_welcome_page(const string& game_menu_background_,
@@ -71,11 +81,6 @@ void Menu::start_info_button_pressed(RenderWindow &window)
                                 const string& physics_department_button_);
     */
     //window.draw(game_menu.welcome_page())
-    std::cout << "start_info_button_pressed" << std::endl;
-}
-
-void Menu::checking_odds_button_pressed(RenderWindow &window)
-{
     std::cout << "checking_odds_pressed" << std::endl;
 }
 
