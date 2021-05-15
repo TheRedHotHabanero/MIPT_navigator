@@ -14,35 +14,47 @@ using std::string;
 class Menu
 {
 private:
+    //----------------------------------------button`s number:
     const static int START_INFO = 1;
     const static int EXIT = 2;
     const static int ABOUT = 3;
     const static int CHECKING_ODDS = 4;
+    //--------------------------------------------------------
 
+    //---------------------------start info button parameters:
     const static int START_INFO_BUTTON_POS_X = 235;
     const static int START_INFO_BUTTON_POS_Y = 130;
     const static int START_INFO_BUTTON_WIDTH = 350;
     const static int START_INFO_BUTTON_HEIGHT = 188;
+    //--------------------------------------------------------
 
+    //---------------------------------exit button parameters:
     const static int EXIT_BUTTON_POS_X = 1110;
     const static int EXIT_BUTTON_POS_Y = 600;
     const static int EXIT_BUTTON_WIDTH = 57;
     const static int EXIT_BUTTON_HEIGHT = 51;
+    //--------------------------------------------------------
 
+    //--------------------------information button parameters:
     const static int ABOUT_BUTTON_POS_X = 20;
     const static int ABOUT_BUTTON_POS_Y = 20;
     const static int ABOUT_BUTTON_WIDTH = 56;
     const static int ABOUT_BUTTON_HEIGHT = 55;
+    //-------------------------------------------------------
 
+    //-------------------------checking odds nutton parameters:
     const static int CHECKING_ODDS_BUTTON_POS_X = 245;
     const static int CHECKING_ODDS_BUTTON_POS_Y = 330;
     const static int CHECKING_ODDS_BUTTON_WIDTH = 332;
     const static int CHECKING_ODDS_BUTTON_HEIGHT = 164;
+    //--------------------------------------------------------
 
+    //------------------window (background picture) parameters:
     const static int WINDOW_POSITION_X = 0;
     const static int WINDOW_POSITION_Y = 0;
     const static int WINDOW_WIDTH = 1200 ;
     const static int WINDOW_HEIGHT = 675;
+    //---------------------------------------------------------
 
 protected:
     Image menu_background;
@@ -76,7 +88,6 @@ public:
     void create_exit_button(const string& exit_button_);
     //------------------------------------------------------------------
 
-
     //------------------------------------------------processing bottons:
     void welcome_page(const string& menu_background_,
                       const string& start_info_,
@@ -85,7 +96,7 @@ public:
                       const string& checking_odds_);                //menu
 
     void start_info_button_pressed(RenderWindow& window);           //start info botton
-    static void exit_button_pressed(RenderWindow& window);          //exit botton
+    void exit_button_pressed(RenderWindow& window);          //exit botton
     void checking_odds_button_pressed(RenderWindow& window);        //checking odds botton
     void about_button_pressed(RenderWindow& window);                //information about authors
     void processing_menu(RenderWindow& window);                     //processing keys
