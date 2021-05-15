@@ -36,18 +36,10 @@ void Menu::create_checking_odds_button(const string &checking_odds_button_)
     checking_odds_sprite.setPosition(CHECKING_ODDS_BUTTON_POS_X, CHECKING_ODDS_BUTTON_POS_Y);
 
 }
-void Menu::create_about_button(const string &about_button_)
-{
-    about_button.loadFromFile(about_button_);
-    about_button_texture.loadFromImage(about_button);
-    about_button_sprite.setTexture(about_button_texture);
-    about_button_sprite.setPosition(ABOUT_BUTTON_POS_X, ABOUT_BUTTON_POS_Y);
-}
 
 void Menu::welcome_page(const string& menu_background_,
                         const string& start_info_button_,
                         const string& exit_button_,
-                        const string& about_button,
                         const string& checking_odds_button_)
 {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT),
@@ -57,14 +49,12 @@ void Menu::welcome_page(const string& menu_background_,
     create_exit_button(exit_button_);
     create_start_info_button(start_info_button_);
     create_checking_odds_button(checking_odds_button_);
-    create_about_button(about_button);
 
     window.clear();
 
     window.draw(menu_background_sprite);
     window.draw(exit_button_sprite);
     window.draw(start_info_button_sprite);
-    window.draw(about_button_sprite);
     window.draw(checking_odds_sprite);
 
     window.display();
@@ -73,12 +63,15 @@ void Menu::welcome_page(const string& menu_background_,
 
 void Menu::start_info_button_pressed(RenderWindow &window)
 {
-    std::cout<< "start_info_button" << std::endl;
-}
-
-void Menu::about_button_pressed(RenderWindow &window)
-{
-    std::cout<< "about_button" << std::endl;
+    //Game_Menu game_menu;
+    /*
+    game_menu.game_welcome_page(const string& game_menu_background_,
+                                const string& game_exit_button_,
+                                const string& math_department_button_,
+                                const string& physics_department_button_);
+    */
+    //window.draw(game_menu.welcome_page())
+    std::cout << "start_info_button_pressed" << std::endl;
 }
 
 void Menu::checking_odds_button_pressed(RenderWindow &window)
@@ -106,10 +99,6 @@ void Menu::processing_menu(RenderWindow& window)
                     EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
             menuNum = EXIT;
 
-        if (IntRect(ABOUT_BUTTON_POS_X, ABOUT_BUTTON_POS_Y,
-                    ABOUT_BUTTON_WIDTH, ABOUT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-            menuNum = ABOUT;
-
         if (IntRect(CHECKING_ODDS_BUTTON_POS_X, CHECKING_ODDS_BUTTON_POS_Y,
                     CHECKING_ODDS_BUTTON_WIDTH, CHECKING_ODDS_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
             menuNum = CHECKING_ODDS;
@@ -121,8 +110,6 @@ void Menu::processing_menu(RenderWindow& window)
                 start_info_button_pressed(window);
             else if (menuNum == EXIT)
                 exit_button_pressed(window);
-            else if (menuNum == ABOUT)
-                about_button_pressed(window);
             else if (menuNum == CHECKING_ODDS)
                 checking_odds_button_pressed(window);
         }
