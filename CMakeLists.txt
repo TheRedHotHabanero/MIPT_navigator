@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SFML_DIR ../SFML/lib/cmake/SFML)
 
-
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 add_executable(MIPT_navigator

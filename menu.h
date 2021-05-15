@@ -19,25 +19,25 @@ private:
     const static int ABOUT = 3;
     const static int CHECKING_ODDS = 4;
 
-    const static int START_INFO_BUTTON_POS_X = 325;
-    const static int START_INFO_BUTTON_POS_Y = 100;
-    const static int START_INFO_BUTTON_WIDTH = 326;
-    const static int START_INFO_BUTTON_HEIGHT = 321;
+    const static int START_INFO_BUTTON_POS_X = 235;
+    const static int START_INFO_BUTTON_POS_Y = 130;
+    const static int START_INFO_BUTTON_WIDTH = 350;
+    const static int START_INFO_BUTTON_HEIGHT = 188;
 
-    const static int EXIT_BUTTON_POS_X = 1020;
-    const static int EXIT_BUTTON_POS_Y = 525;
-    const static int EXIT_BUTTON_WIDTH = 400;
-    const static int EXIT_BUTTON_HEIGHT = 500;
+    const static int EXIT_BUTTON_POS_X = 1110;
+    const static int EXIT_BUTTON_POS_Y = 600;
+    const static int EXIT_BUTTON_WIDTH = 57;
+    const static int EXIT_BUTTON_HEIGHT = 51;
 
-    const static int ABOUT_BUTTON_POS_X = 400;
-    const static int ABOUT_BUTTON_POS_Y = 400;
-    const static int ABOUT_BUTTON_WIDTH = 400;
-    const static int ABOUT_BUTTON_HEIGHT = 400;
+    const static int ABOUT_BUTTON_POS_X = 20;
+    const static int ABOUT_BUTTON_POS_Y = 20;
+    const static int ABOUT_BUTTON_WIDTH = 56;
+    const static int ABOUT_BUTTON_HEIGHT = 55;
 
-    const static int CHECKING_ODDS_BUTTON_POS_X = 400;
-    const static int CHECKING_ODDS_BUTTON_POS_Y = 400;
-    const static int CHECKING_ODDS_BUTTON_WIDTH = 400;
-    const static int CHECKING_ODDS_BUTTON_HEIGHT = 400;
+    const static int CHECKING_ODDS_BUTTON_POS_X = 245;
+    const static int CHECKING_ODDS_BUTTON_POS_Y = 330;
+    const static int CHECKING_ODDS_BUTTON_WIDTH = 332;
+    const static int CHECKING_ODDS_BUTTON_HEIGHT = 164;
 
     const static int WINDOW_POSITION_X = 0;
     const static int WINDOW_POSITION_Y = 0;
