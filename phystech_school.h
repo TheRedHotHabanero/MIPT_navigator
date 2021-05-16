@@ -15,7 +15,7 @@ class Phystech_School
 {
 private:
     int number_of_subjects = 3;         //number of subjects for summ of points, change if necessary
-    bool computer_science == false;     // if this subject is in summ for points, set it true.
+    bool computer_science = false;     // if this subject is in summ for points, set it true.
     bool math = true;
     bool physics = false;
     bool russian_language = true;
@@ -37,7 +37,7 @@ public:
     virtual void welcome_school_page();
 
     //sound playback, but her znaet if I need a function to play sound
-    virtual void make_sound(const string& sound_)
+    virtual void make_sound(const string& sound_);
 
     //part of the window with boring information, but also her znaet if i need this function
     virtual void show_school_information();
