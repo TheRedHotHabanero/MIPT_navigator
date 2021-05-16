@@ -14,6 +14,13 @@ add_executable(MIPT_navigator
         phystech_menu.cpp
         phystech_menu.h
         phystech_school.h
-        phystech_school.cpp)
+        phystech_school.cpp
+        faki.h
+        fbmf.h
+        fefm.h
+        fpmi.h
+        frkt.h
+        inbicst.h
+        lfi.h)
 
 target_link_libraries(MIPT_navigator sfml-graphics sfml-audio)
