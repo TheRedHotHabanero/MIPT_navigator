@@ -11,6 +11,13 @@ using std::string;
 class Faki : protected Phystech_School {
 private:
 protected:
+    string title_text = ;
+    string phystech_school_background_ = ;
+    string font_for_title_ = ;
+    string trick_button_ = ;
+    string phystech_school_background_ = "../images/fakt_background.png";
+    string counting_points_button_ = "../images/";
+
     //----------------------------------------button`s number:
     const static int TRICK = 1;
     const static int EXIT = 2;
