@@ -36,6 +36,7 @@ protected:
     string font_for_title_;
     string trick_button_;
     string counting_points_button_ ;
+    string text_;
     //-------------------------------------------------------
 
     //---------------------------------exit button parameters:

@@ -29,6 +29,14 @@ void Phystech_School::create_phystech_school_background(const string& phystech_s
     phystech_school_background_sprite.setPosition(WINDOW_POSITION_X, WINDOW_POSITION_Y);
 }
 
+void Phystech_School::welcome_school_page(string &trick_button_,
+                                          string &title_text_,
+                                          string &phystech_background_,
+                                          string &exit_button_,
+                                          string &counting_points_button_)
+                                          {
+
+                                          }
 void Phystech_School::processing_keys(RenderWindow& window)
 {
     while (window.isOpen())

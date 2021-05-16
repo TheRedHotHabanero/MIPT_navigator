@@ -16,6 +16,7 @@ protected:
     string trick_button_;
     string phystech_school_background_ = "../images/fakt_background.png";
     string counting_points_button_ = "../images/";
+    string text_;
 
     //----------------------------------------button`s number:
     const static int TRICK = 1;
