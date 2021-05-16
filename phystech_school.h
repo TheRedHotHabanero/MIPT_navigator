@@ -37,6 +37,7 @@ protected:
     string trick_button_;
     string counting_points_button_ ;
     string text_;
+    const string exit_button_ = "../images/exit_button.png";
     //-------------------------------------------------------
 
     //---------------------------------exit button parameters:
@@ -100,11 +101,11 @@ public:
     virtual void counting_points(int number_of_subjects, int summ);
 
     //------------------------------------------------------creating bottons and background:
-    void create_exit_button();
+    void create_exit_button(string& exit_button_);
     virtual void create_phystech_school_background(string& phystech_school_background_);
     void create_counting_points_button(string& counting_points_button_);
     virtual void create_trick_button(string& trick_button_);
-    virtual void create_text_title(string& title_text_);
+    virtual void create_text_title(string& title_text_, string text_);
     //-------------------------------------------------------------------------------------
 
     //the first window of the Phystech School (like welcome_page from menu)

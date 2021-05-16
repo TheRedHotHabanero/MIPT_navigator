@@ -3,17 +3,15 @@
 //
 #include "phystech_school.h"
 
-void Phystech_School::create_exit_button()
+void Phystech_School::create_exit_button(string& exit_button_)
 {
-    string exit_button_ = "../images/exit_button.png";
-
     exit_button.loadFromFile(exit_button_);
     exit_button_texture.loadFromImage(exit_button);
     exit_button_sprite.setTexture(exit_button_texture);
     exit_button_sprite.setPosition(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y);
 }
 
-void Phystech_School::create_counting_points_button()
+void Phystech_School::create_counting_points_button(string& counting_points_button_)
 {
     counting_points_button.loadFromFile(counting_points_button_);
     counting_points_texture.loadFromImage(counting_points_button);
@@ -21,7 +19,7 @@ void Phystech_School::create_counting_points_button()
     counting_points_sprite.setPosition(COUNTING_POINTS_POS_X, COUNTING_POINTS_POS_Y);
 }
 
-void Phystech_School::create_phystech_school_background(const string& phystech_school_background_)
+void Phystech_School::create_phystech_school_background(string& phystech_school_background_)
 {
     phystech_school_background.loadFromFile(phystech_school_background_);
     phystech_school_background_texture.loadFromImage(phystech_school_background);
@@ -34,9 +32,27 @@ void Phystech_School::welcome_school_page(string &trick_button_,
                                           string &phystech_background_,
                                           string &exit_button_,
                                           string &counting_points_button_)
-                                          {
+{
+    RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT),
+                        text_);
 
-                                          }
+    create_phystech_school_background(phystech_background_);
+    create_exit_button(exit_button_);
+    create_counting_points_button(counting_points_button_);
+    create_text_title(title_text_, text_);
+    create_trick_button(trick_button_);
+    
+    window.clear();
+
+    window.draw(phystech_school_background_sprite);
+    window.draw(exit_button_sprite);
+    window.draw(trick_button_sprite);
+    window.draw(counting_points_sprite);
+    window.draw(title);
+
+    window.display();
+    processing_keys(window);
+}
 void Phystech_School::processing_keys(RenderWindow& window)
 {
     while (window.isOpen())
