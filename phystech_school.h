@@ -4,6 +4,13 @@
 
 #ifndef MIPT_NAVIGATOR_PHYSTECH_SCHOOL_H
 
+#include <SFML/Graphics.hpp>
+#include <string>
+#include <iostream>
+
+using namespace sf;
+using std::string;
+
 class Phystech_School
 {
 private:
@@ -34,6 +41,15 @@ public:
 
     //part of the window with boring information, but also her znaet if i need this function
     virtual void show_school_information();
+
+    //---------------------------------------------------------pressed keys:
+    virtual void trick_button_pressed(RenderWindow& window);
+    virtual void exit_button_pressed(RenderWindow& window);
+    virtual void counting_points_pressed(RenderWindow& window);
+    //---------------------------------------------------------------------
+
+    //processing keys
+    virtual void processing_keys(RenderWindow& window);
 
 };
 
