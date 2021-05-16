@@ -76,8 +76,6 @@ public:
 
     void create_exit_button(const string &exit_button_);
 
-    void create_text_title(const string &font_for_title_, string text_);
-
     void create_trick_button(const string& trick_button_);
     //---------------------------------------------------------pressed keys:
     void trick_button_pressed(RenderWindow& window);
