@@ -8,13 +8,12 @@
 #include <string>
 using std::string;
 
-class Faki : protected Phystech_School {
-private:
+class Faki : public Phystech_School
+{
 protected:
-    string title_text = ;
-    string phystech_school_background_ = ;
-    string font_for_title_ = ;
-    string trick_button_ = ;
+    string title_text_;
+    string font_for_title_;
+    string trick_button_;
     string phystech_school_background_ = "../images/fakt_background.png";
     string counting_points_button_ = "../images/";
 
@@ -68,9 +67,11 @@ protected:
     Font font_for_title;
 
 public:
-    void welcome_school_page(const string &font_for_title_,
-                             const string &trick_button_,
-                             const string &exit_button_);
+    void welcome_school_page(string& trick_button_,
+                             string& title_text_,
+                             string& phystech_background_,
+                             string& exit_button_,
+                             string& counting_points_button_);
 
     void create_exit_button(const string &exit_button_);
 

@@ -1,4 +1,4 @@
-    //
+//
 // Created by karina on 12.05.2021.
 //
 
@@ -35,7 +35,6 @@ protected:
     string phystech_school_background_;
     string font_for_title_;
     string trick_button_;
-    string phystech_school_background_;
     string counting_points_button_ ;
     //-------------------------------------------------------
 
@@ -101,18 +100,19 @@ public:
 
     //------------------------------------------------------creating bottons and background:
     void create_exit_button();
-    virtual void create_phystech_school_background(const string& phystech_school_background_);
-    void create_counting_points_button();
-    virtual void create_trick_button();
-    virtual void create_text_title();
+    virtual void create_phystech_school_background(string& phystech_school_background_);
+    void create_counting_points_button(string& counting_points_button_);
+    virtual void create_trick_button(string& trick_button_);
+    virtual void create_text_title(string& title_text_);
     //-------------------------------------------------------------------------------------
 
     //the first window of the Phystech School (like welcome_page from menu)
-    virtual void welcome_school_page(string& trick_button,
-                                     string& title_text,
+    virtual void welcome_school_page(string& trick_button_,
+                                     string& title_text_,
                                      string& phystech_background_,
                                      string& exit_button_,
-                                     string& ciunting_points_button_); // virtual because different titles
+                                     string& counting_points_button_); // virtual because different titles
+
 
     //sound playback, but her znaet if I need a function to play sound
     virtual void make_sound(const string& sound_);
