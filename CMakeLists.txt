@@ -12,6 +12,8 @@ add_executable(MIPT_navigator
         menu.cpp
         menu.h
         phystech_menu.cpp
-        phystech_menu.h)
+        phystech_menu.h
+        phystech_school.h
+        phystech_school.cpp)
 
 target_link_libraries(MIPT_navigator sfml-graphics sfml-audio)
