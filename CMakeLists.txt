@@ -10,8 +10,9 @@ find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 add_executable(MIPT_navigator
         main.cpp
-        menu.cpp
         menu.h
+        menu.cpp
+        phystech_menu.h
         phystech_menu.cpp
         phystech_menu.h
         
@@ -21,6 +22,21 @@ add_executable(MIPT_navigator
         Game_Menu.cpp 
         Player.cpp         
 
-        )
+        phystech_school.h
+        phystech_school.cpp
+        faki.h
+        faki.cpp
+        fbmf.h
+        fbmf.cpp
+        fefm.h
+        fefm.cpp
+        fpmi.h
+        fpmi.cpp
+        frkt.h
+        frkt.cpp
+        inbicst.h
+        inbicst.cpp
+        lfi.h
+        lfi.cpp)
 
 target_link_libraries(MIPT_navigator sfml-graphics sfml-audio)
