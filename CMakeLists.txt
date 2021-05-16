@@ -20,7 +20,8 @@ add_executable(MIPT_navigator
         Сharacter.cpp
         Fucker.cpp
         Game_Menu.cpp 
-        Player.cpp         
+        Player.cpp 
+        map.cpp        
 
         phystech_school.h
         phystech_school.cpp

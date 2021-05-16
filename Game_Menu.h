@@ -69,8 +69,8 @@ public:
     void create_game_exit_button(const string& game_exit_button_);
 
     //-----------------------------running levels
-    void run_math(); 
-    void run_phys();
+    void run_math(RenderWindow& window);
+    void run_phys(RenderWindow& window);
    
     //------------------------------------------------processing bottons:
  

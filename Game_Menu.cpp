@@ -1,4 +1,6 @@
 #include "Game_Menu.h"
+#include "map.h"
+using namespace sf;
 
 
 //------------------buttons creating functions ------//OK
@@ -36,13 +38,59 @@ void Game_Menu::create_game_exit_button(const string& game_exit_button_)
 }
 
 //----------running levels 
-void Game_Menu:: run_math()
+void Game_Menu:: run_math(RenderWindow& window)
 {
+    Map map("math_map.png");
 
+    while (window.isOpen())
+    {
+
+        /*float time = clock.getElapsedTime().asMicroseconds();
+        clock.restart();
+        time = time / 800;*/
+
+
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+            map.draw_map(map.get_sprite(), window);
+           
+        }
+
+         
+        ///////////////////////////////////////////”правление персонажем с анимацией////////////////////////////////////////////////////////////////////////
+        
+        window.display();
+    }
 }
-void Game_Menu:: run_phys()
+void Game_Menu:: run_phys(RenderWindow& window)
 {
+    Map map("phys_map.png");
 
+    while (window.isOpen())
+    {
+
+        /*float time = clock.getElapsedTime().asMicroseconds();
+        clock.restart();
+        time = time / 800;*/
+
+
+        Event event;
+        while (window.pollEvent(event))
+        {
+            if (event.type == sf::Event::Closed)
+                window.close();
+            map.draw_map(map.get_sprite(), window);
+
+        }
+
+
+        ///////////////////////////////////////////”правление персонажем с анимацией////////////////////////////////////////////////////////////////////////
+
+        window.display();
+    }
 }
 
 //---------processing bottons (грубо говор€: что делает кажда€ кнопка при нажатии)
@@ -74,11 +122,11 @@ void Game_Menu::game_welcome_page(const string& game_menu_background_,
 
 void Game_Menu::math_department_button_pressed(RenderWindow& window)
 {
-    run_math();
+    run_math(window);
 }
 void Game_Menu::physics_department_button_pressed(RenderWindow& window)
 {
-    run_phys();
+    run_phys(window);
 }
 
 
