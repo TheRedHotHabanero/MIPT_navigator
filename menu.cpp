@@ -68,7 +68,7 @@ void Menu::start_info_button_pressed(RenderWindow &window)
     //std::cout << "start_info_button_pressed" << std::endl;
     //window.display();
     Phystech_Menu phystech_menu;
-    phystech_welcome_page();
+    phystech_menu.phystech_page();
 }
 
 void Menu::checking_odds_button_pressed(RenderWindow &window)

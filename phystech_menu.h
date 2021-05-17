@@ -8,10 +8,20 @@
 #include <string>
 #include <iostream>
 
+#include "phystech_school.h"
+#include "faki.h"
+#include "lfi.h"
+#include "faki.h"
+#include "fefm.h"
+#include "fpmi.h"
+#include "fbmf.h"
+#include "inbicst.h"
+#include "menu.h"
+
 using namespace sf;
 using std::string;
 
-class Phystech_Menu
+class Phystech_Menu: public Phystech_School
 {
 private:
     //----------------------------------------button`s number:
@@ -26,8 +36,8 @@ private:
     //--------------------------------------------------------
 
     //---------------------------start info button parameters:
-    const static int SCHOOL_INFO_BUTTON_WIDTH = 350;
-    const static int SCHOOL_INFO_BUTTON_HEIGHT = 188;
+    const static int SCHOOL_INFO_BUTTON_WIDTH = 355;
+    const static int SCHOOL_INFO_BUTTON_HEIGHT = 190;
     //--------------------------------------------------------
 
     //------------------------------------------------------------------

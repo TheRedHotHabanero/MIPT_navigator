@@ -55,20 +55,6 @@ protected:
     const static int WINDOW_HEIGHT = 675;
     //---------------------------------------------------------
 
-    //---------------------------------trick button parameters:
-    const static int TRICK_BUTTON_POS_X = 1000;
-    const static int TRICK_BUTTON_POS_Y = 400;
-    const static int TRICK_BUTTON_WIDTH = 350;
-    const static int TRICK_BUTTON_HEIGHT = 150;
-    //---------------------------------------------------------
-
-    //------------------counting points button parameters:
-    const static int COUNTING_POINTS_POS_X = 300;
-    const static int COUNTING_POINTS_POS_Y = 400;
-    const static int COUNTING_POINTS_WIDTH = 350;
-    const static int COUNTING_POINTS_HEIGHT = 200;
-    //---------------------------------------------------------
-
     //----------------------------------------title parameters:
     const static int TITLE_CHARACTER_SIZE = 30;
     const static int TEXT_CHARACTER_SIZE = 18;
@@ -110,7 +96,7 @@ public:
 
     virtual void create_phystech_school_background(string &phystech_school_background_);
 
-    void create_counting_points_button(string &counting_points_button_);
+    virtual void create_counting_points_button(string &counting_points_button_);
 
     virtual void create_trick_button(string &trick_button_);
 
