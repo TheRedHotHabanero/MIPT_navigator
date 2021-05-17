@@ -9,7 +9,7 @@
 #include <iostream>
 
 #include "phystech_school.h"
-#include "faki.h"
+#include "frkt.h"
 #include "lfi.h"
 #include "faki.h"
 #include "fefm.h"

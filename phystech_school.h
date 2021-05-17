@@ -33,12 +33,12 @@ protected:
 
     //-------------------------------------------------------
     string title_text;
-    string phystech_school_background_;
-    string font_ = "../Font.ttf";
+    string phystech_background_;
+    string font_for_title;
     string trick_button_;
     string counting_points_button_;
     string text_;
-    const string exit_button_ = "../images/exit_button.png";
+    string exit_button_;
     //-------------------------------------------------------
 
     //---------------------------------exit button parameters:
