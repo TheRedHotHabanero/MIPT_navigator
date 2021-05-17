@@ -15,7 +15,7 @@ private:
     {
         EXIT = 1,
         MATH = 2,
-        PHYS =3,
+        PHYS = 3,
 
         MENU_POS_X = 0,
         MENU_POS_Y = 0,
@@ -23,7 +23,7 @@ private:
         MATH_BUTTON_POS_X = 160,
         MATH_BUTTON_POS_Y = 220,
         MATH_BUTTON_WIDTH = 304,
-        MATH_BUTTON_HEIGHT = 166, 
+        MATH_BUTTON_HEIGHT = 166,
 
         PHYS_BUTTON_POS_X = 790,
         PHYS_BUTTON_POS_Y = 220,
@@ -71,9 +71,9 @@ public:
     //-----------------------------running levels
     void run_math(RenderWindow& window);
     void run_phys(RenderWindow& window);
-   
+
     //------------------------------------------------processing bottons:
- 
+
     void game_welcome_page(const string& game_menu_background_,
         const string& game_exit_button_,
         const string& math_department_button_,
@@ -81,11 +81,11 @@ public:
 
     void math_department_button_pressed(RenderWindow& window);
     void physics_department_button_pressed(RenderWindow& window);
-    void game_exit_button_pressed(RenderWindow& window); 
+    void game_exit_button_pressed(RenderWindow& window);
     void processing_menu(RenderWindow& window);
     //------------------------------------------------------------------
 };
 
 
 
-#endif //!__GAME__MENU__
+#endif __GAME__MENU__

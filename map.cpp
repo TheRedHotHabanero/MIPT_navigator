@@ -6,9 +6,9 @@ Map::Map(String F)
     File = F;
     image.loadFromFile("game_images/maps/" + File);
     texture.loadFromImage(image);
-    sprite.setTexture(texture);
+    sprite.setTexture(texture);//заливаем спрайт текстурой
 
-    
+
 }
 
 Map::~Map() {}
@@ -21,7 +21,8 @@ Sprite& Map::get_sprite()
     return s;
 }
 
-void Map:: draw_map(Sprite& s_map, RenderWindow& window)
+
+void Map::draw_map(Sprite& s_map, RenderWindow& window)
 {
     for (int i = 0; i < HEIGHT_MAP; i++)
     {
@@ -32,7 +33,7 @@ void Map:: draw_map(Sprite& s_map, RenderWindow& window)
             case '0':s_map.setTextureRect(IntRect(102, 0, 51, 51)); break;
             case '1':s_map.setTextureRect(IntRect(0, 0, 51, 51)); break;
             case '2':s_map.setTextureRect(IntRect(51, 0, 51, 51)); break;
-            case ' ':s_map.setTextureRect(IntRect(51, 0, 51, 51)); break;
+            case ' ':s_map.setTextureRect(IntRect(0, 51, 51, 51)); break;
             }
             s_map.setPosition((float)j * 51, (float)i * 51);
             window.draw(s_map);

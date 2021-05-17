@@ -7,12 +7,13 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <iostream>
+#include <fstream>
 
 using namespace sf;
 using std::string;
+using std::ifstream;
 
-class Phystech_School
-{
+class Phystech_School {
 protected:
     //----------------------------------------button`s number:
     const static int TRICK = 1;
@@ -33,9 +34,9 @@ protected:
     //-------------------------------------------------------
     string title_text;
     string phystech_school_background_;
-    string font_for_title_;
+    string font_ = "../Font.ttf";
     string trick_button_;
-    string counting_points_button_ ;
+    string counting_points_button_;
     string text_;
     const string exit_button_ = "../images/exit_button.png";
     //-------------------------------------------------------
@@ -50,7 +51,7 @@ protected:
     //------------------window (background picture) parameters:
     const static int WINDOW_POSITION_X = 0;
     const static int WINDOW_POSITION_Y = 0;
-    const static int WINDOW_WIDTH = 1200 ;
+    const static int WINDOW_WIDTH = 1200;
     const static int WINDOW_HEIGHT = 675;
     //---------------------------------------------------------
 
@@ -69,11 +70,15 @@ protected:
     //---------------------------------------------------------
 
     //----------------------------------------title parameters:
-    Font font_for_title;
-    const static int CHARACTER_SIZE = 20;
+    const static int TITLE_CHARACTER_SIZE = 30;
+    const static int TEXT_CHARACTER_SIZE = 18;
     const static int TITLE_POS_X = 500;
     const static int TITLE_POS_Y = 20;
+    const static int BORING_TEXT_POS_X = 200;
+    const static int BORING_TEXT_POS_Y = 200;
+    Font font;
     Text title;
+    Text boring_text;
     //---------------------------------------------------------
 
     //--------------------------------------presets for sprites:
@@ -101,35 +106,43 @@ public:
     virtual void counting_points(int number_of_subjects, int summ);
 
     //------------------------------------------------------creating bottons and background:
-    void create_exit_button(string& exit_button_);
-    virtual void create_phystech_school_background(string& phystech_school_background_);
-    void create_counting_points_button(string& counting_points_button_);
-    virtual void create_trick_button(string& trick_button_);
-    virtual void create_text_title(string& title_text_, string text_);
+    void create_exit_button(string &exit_button_);
+
+    virtual void create_phystech_school_background(string &phystech_school_background_);
+
+    void create_counting_points_button(string &counting_points_button_);
+
+    virtual void create_trick_button(string &trick_button_);
+
+    virtual void create_text_title(string &title_text_, string text_);
     //-------------------------------------------------------------------------------------
 
     //the first window of the Phystech School (like welcome_page from menu)
-    virtual void welcome_school_page(string& trick_button_,
-                                     string& title_text_,
-                                     string& phystech_background_,
-                                     string& exit_button_,
-                                     string& counting_points_button_); // virtual because different titles
+    virtual void welcome_school_page(string &trick_button_,
+                                     string &title_text_,
+                                     string &phystech_background_,
+                                     string &exit_button_,
+                                     string &counting_points_button_); // virtual because different titles
 
 
     //sound playback, but her znaet if I need a function to play sound
-    virtual void make_sound(const string& sound_);
+    virtual void make_sound(const string &sound_);
 
     //part of the window with boring information, but also her znaet if i need this function
-    virtual void show_school_information();
+    void show_school_information(string &font_, string &text_);
+
+    void create_text_title(string &text_);
 
     //---------------------------------------------------------pressed keys:
-    virtual void trick_button_pressed(RenderWindow& window);
-    virtual void exit_button_pressed(RenderWindow& window);
-    virtual void counting_points_pressed(RenderWindow& window);
+    virtual void trick_button_pressed(RenderWindow &window);
+
+    virtual void exit_button_pressed(RenderWindow &window);
+
+    virtual void counting_points_pressed(RenderWindow &window);
     //---------------------------------------------------------------------
 
     //processing keys
-    virtual void processing_keys(RenderWindow& window);
+    virtual void processing_keys(RenderWindow &window);
 
 };
 
