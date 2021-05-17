@@ -136,9 +136,9 @@ public:
     //---------------------------------------------------------pressed keys:
     virtual void trick_button_pressed(RenderWindow &window);
 
-    virtual void exit_button_pressed(RenderWindow &window);
+    void exit_button_pressed(RenderWindow &window);
 
-    virtual void counting_points_pressed(RenderWindow &window);
+    void counting_points_pressed(RenderWindow &window);
     //---------------------------------------------------------------------
 
     //processing keys

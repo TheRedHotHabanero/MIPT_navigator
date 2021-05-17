@@ -75,6 +75,10 @@ void Phystech_School::welcome_school_page(string &trick_button_,
     processing_keys(window);
 }
 
+void Phystech_School::exit_button_pressed(RenderWindow &window) {}
+
+void Phystech_School::counting_points_pressed(RenderWindow &window){}
+
 void Phystech_School::processing_keys(RenderWindow &window) {
     while (window.isOpen()) {
         Event event;

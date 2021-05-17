@@ -6,10 +6,10 @@
 
 #include "phystech_school.h"
 #include <string>
+
 using std::string;
 
-class Faki : public Phystech_School
-{
+class Faki : public Phystech_School {
 protected:
     string title_text_;
     string font_for_title_;
@@ -68,21 +68,10 @@ protected:
     Font font_for_title;
 
 public:
-    void welcome_school_page(string& trick_button_,
-                             string& title_text_,
-                             string& phystech_background_,
-                             string& exit_button_,
-                             string& counting_points_button_);
 
-    void create_exit_button(const string &exit_button_);
+    void create_trick_button(const string &trick_button_);
 
-    void create_trick_button(const string& trick_button_);
-    //---------------------------------------------------------pressed keys:
-    void trick_button_pressed(RenderWindow& window);
-    void exit_button_pressed(RenderWindow& window);
-    void counting_points_pressed(RenderWindow& window);
-    //---------------------------------------------------------------------
-    void processing_keys(RenderWindow& window);
+    void trick_button_pressed(RenderWindow &window);
 };
 
 #define MIPT_NAVIGATOR_FAKI_H
