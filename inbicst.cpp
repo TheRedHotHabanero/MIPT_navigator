@@ -3,10 +3,26 @@
 //
 #include "inbicst.h"
 
-void Inbicst::create_trick_button(const string &trick_button_)
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
+void Inbicst::trick_button_pressed(RenderWindow &window)
 {
-    trick_button.loadFromFile(trick_button_);
-    trick_button_texture.loadFromImage(trick_button);
-    trick_button_sprite.setTexture(trick_button_texture);
-    trick_button_sprite.setPosition(TRICK_BUTTON_POS_X, TRICK_BUTTON_POS_Y);
+    SoundBuffer buffer;
+    Sound sound;
+    std::cout << "-" << std::endl;
+    std::cout << "-" << std::endl;
+    std::cout << "-" << std::endl;
+    std::cout << "-" << std::endl;
+    std::cout << "-" << std::endl;
+    std::cout << "-----Why you babysitting only two or three shots?----" << std::endl;
+    std::cout << "-----I'ma show you how to turn it uo a notch---------" << std::endl;
+    std::cout << "-" << std::endl;
+    std::cout << "-" << std::endl;
+    std::cout << "-" << std::endl;
+    std::cout << "-" << std::endl;
+    std::cout << "-" << std::endl;
+    buffer.loadFromFile("../Sound/inbicst.mp3");
+    sound.setBuffer(buffer);
+    sound.play();
 }
