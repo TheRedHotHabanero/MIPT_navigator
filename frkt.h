@@ -47,19 +47,7 @@ public:
     string phystech_background_ = "../images/school_backs/frkt_back.png";
     string exit_button_ = "../images/exit_button.png";
     //--------------------------------------------------------------------
-
-    void welcome_school_page(string& trick_button_,
-                             string& title_text_,
-                             string& phystech_background_,
-                             string& exit_button_,
-                             string& counting_points_button_);
-
-    void create_exit_button(const string &exit_button_);
-
-    void create_trick_button(const string& trick_button_);
-    //---------------------------------------------------------pressed keys:
     void trick_button_pressed(RenderWindow& window);
-    void exit_button_pressed(RenderWindow& window);
     void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
     void processing_keys(RenderWindow& window);
