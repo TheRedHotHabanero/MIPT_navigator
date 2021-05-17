@@ -17,7 +17,8 @@ add_executable(MIPT_navigator
         phystech_menu.h
         
 
-        Сharacter.cpp
+        Character.cpp
+        Character.h
         Fucker.cpp
         Game_Menu.cpp 
         Player.cpp 
