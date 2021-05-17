@@ -38,27 +38,15 @@ public:
     //---------------------------------------------------------page params:
     string title_text_;
     string font_for_title_;
-    string trick_button_;
-    string phystech_school_background_ = "../images/fakt_background.png";
-    string counting_points_button_ = "../images/";
     string text_;
-    string phystech_background_;
-    string exit_button_;
+    string trick_button_ = "../images/tricks/fakt_trick.png";
+    string counting_points_button_ = "../images/counting_points_button.png";
+    string phystech_background_ = "../images/school_backs/fakt_back.png";
+    string exit_button_ = "../images/exit_button.png";
     //--------------------------------------------------------------------
 
-    void welcome_school_page(string& trick_button_,
-                             string& title_text_,
-                             string& phystech_background_,
-                             string& exit_button_,
-                             string& counting_points_button_);
-
-    void create_exit_button(const string &exit_button_);
-
-    void create_trick_button(const string& trick_button_);
-    //---------------------------------------------------------pressed keys:
-    void trick_button_pressed(RenderWindow& window);
-    void exit_button_pressed(RenderWindow& window);
-    void counting_points_pressed(RenderWindow& window);
+    virtual void trick_button_pressed(RenderWindow& window) override;
+    virtual void counting_points_pressed(RenderWindow& window) override;
     //---------------------------------------------------------------------
     void processing_keys(RenderWindow& window);
 };

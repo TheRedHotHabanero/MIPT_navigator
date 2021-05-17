@@ -18,17 +18,17 @@ class Inbicst : public Phystech_School
 protected:
 
     //---------------------------------trick button parameters:
-    const static int TRICK_BUTTON_POS_X = 235;
-    const static int TRICK_BUTTON_POS_Y = 130;
-    const static int TRICK_BUTTON_WIDTH = 350;
-    const static int TRICK_BUTTON_HEIGHT = 188;
+    const static int TRICK_BUTTON_POS_X = 900;
+    const static int TRICK_BUTTON_POS_Y = 30;
+    const static int TRICK_BUTTON_WIDTH = 287;
+    const static int TRICK_BUTTON_HEIGHT = 187;
     //--------------------------------------------------------
 
     // ------------------------counting point button parameters:
-    const static int COUNTING_POINTS_POS_X = 100;
-    const static int COUNTING_POINTS_POS_Y = 100;
-    const static int COUNTING_POINTS_WIDTH = 350;
-    const static int COUNTING_POINTS_HEIGHT = 188;
+    const static int COUNTING_POINTS_POS_X = 900;
+    const static int COUNTING_POINTS_POS_Y = 300;
+    const static int COUNTING_POINTS_WIDTH = 414;
+    const static int COUNTING_POINTS_HEIGHT = 208;
     //--------------------------------------------------------
 
     Image exit_button;
@@ -43,19 +43,18 @@ public:
     //---------------------------------------------------------page params:
     string title_text_;
     string font_for_title_;
-    string trick_button_;
-    string phystech_school_background_ = "../images/lfi_background.png";
-    string counting_points_button_ = "../images/";
     string text_;
-    string phystech_background_;
-    string exit_button_;
+    string trick_button_ = "../images/tricks/inbicst_trick.png";
+    string counting_points_button_ = "../images/counting_points_button.png";
+    string phystech_background_ = "../images/school_backs/inbicst_back.png";
+    string exit_button_ = "../images/exit_button.png";
     //--------------------------------------------------------------------
 
     void welcome_school_page(string& trick_button_,
                              string& title_text_,
                              string& phystech_background_,
                              string& exit_button_,
-                             string& counting_points_button_);
+                             string& counting_points_button_) override;
 
     void create_exit_button(const string &exit_button_);
 

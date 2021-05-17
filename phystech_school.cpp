@@ -11,7 +11,8 @@ void Phystech_School::create_exit_button(string &exit_button_)
     exit_button_sprite.setPosition(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y);
 }
 
-void Phystech_School::create_phystech_school_background(string &phystech_school_background_) {
+void Phystech_School::create_phystech_school_background(string &phystech_school_background_)
+{
     phystech_school_background.loadFromFile(phystech_school_background_);
     phystech_school_background_texture.loadFromImage(phystech_school_background);
     phystech_school_background_sprite.setTexture(phystech_school_background_texture);
@@ -26,7 +27,8 @@ void Phystech_School::create_text_title(string &text_) {
     title.setPosition(TITLE_POS_X, TITLE_POS_Y);
 }
 
-void Phystech_School::show_school_information(string &font_, string &text_) {
+void Phystech_School::show_school_information(string &font_, string &text_)
+{
     font.loadFromFile(font_);
     create_text_title(text_);
     //--------------------------------------reading text from file
@@ -47,7 +49,8 @@ void Phystech_School::welcome_school_page(string &trick_button_,
                                           string &title_text_,
                                           string &phystech_background_,
                                           string &exit_button_,
-                                          string &counting_points_button_) {
+                                          string &counting_points_button_)
+{
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT),
                         text_);
 
@@ -66,14 +69,33 @@ void Phystech_School::welcome_school_page(string &trick_button_,
     window.draw(title);
 
     window.display();
-    processing_keys(window);
+    processing_keys(window,
+                    COUNTING_POINTS_POS_X,
+                    COUNTING_POINTS_POS_Y,
+                    COUNTING_POINTS_WIDTH,
+                    COUNTING_POINTS_HEIGHT,
+                    TRICK_BUTTON_POS_X,
+                    TRICK_BUTTON_POS_Y,
+                    TRICK_BUTTON_WIDTH,
+                    TRICK_BUTTON_HEIGHT);
 }
 
-void Phystech_School::exit_button_pressed(RenderWindow &window) {}
+void Phystech_School::exit_button_pressed(RenderWindow &window)
+{
+
+}
 
 void Phystech_School::counting_points_pressed(RenderWindow &window){}
 
-void Phystech_School::processing_keys(RenderWindow &window)
+void Phystech_School::processing_keys(RenderWindow &window,
+                                      int COUNTING_POINTS_POS_X,
+                                      int COUNTING_POINTS_POS_Y,
+                                      int COUNTING_POINTS_WIDTH,
+                                      int COUNTING_POINTS_HEIGHT,
+                                      int TRICK_BUTTON_POS_X,
+                                      int TRICK_BUTTON_POS_Y,
+                                      int TRICK_BUTTON_WIDTH,
+                                      int TRICK_BUTTON_HEIGHT)
 {
     while (window.isOpen())
     {
@@ -95,7 +117,8 @@ void Phystech_School::processing_keys(RenderWindow &window)
             phystech_school_menu_num = EXIT;
 
 
-        if (Mouse::isButtonPressed(Mouse::Left)) {
+        if (Mouse::isButtonPressed(Mouse::Left))
+        {
             if (phystech_school_menu_num == TRICK)
                 trick_button_pressed(window);
             else if (phystech_school_menu_num == EXIT)
