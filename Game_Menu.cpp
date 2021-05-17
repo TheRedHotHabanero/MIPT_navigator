@@ -1,4 +1,6 @@
 #include "Game_Menu.h"
+#include "Player.h"
+#include "Fucker.h"
 #include "map.h"
 using namespace sf;
 
@@ -38,16 +40,23 @@ void Game_Menu::create_game_exit_button(const string& game_exit_button_)
 }
 
 //----------running levels 
-void Game_Menu:: run_math(RenderWindow& window)
+void Game_Menu::run_math(RenderWindow& window)
 {
     Map map("math_map.png");
+
+    //String F, float X, float Y, float A, float B, float W, float H)
+    Player student("student.png", 200, 200, 100, 0, 41, 57);
+
+    float CurrentFrame = 0;
+    Clock clock;
+
 
     while (window.isOpen())
     {
 
-        /*float time = clock.getElapsedTime().asMicroseconds();
+        float time = clock.getElapsedTime().asMicroseconds();
         clock.restart();
-        time = time / 800;*/
+        time = time / 800;
 
 
         Event event;
@@ -55,17 +64,26 @@ void Game_Menu:: run_math(RenderWindow& window)
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-            map.draw_map(map.get_sprite(), window);
-           
+
         }
 
-         
+        map.draw_map(map.get_sprite(), window);
+        student.control(time, CurrentFrame);
+        student.update(time);
+
+        window.clear();
         ///////////////////////////////////////////Управление персонажем с анимацией////////////////////////////////////////////////////////////////////////
-        
+
+
+        map.draw_map(map.get_sprite(), window);
+        window.draw(student.get_sprite());
+
+
         window.display();
+
     }
 }
-void Game_Menu:: run_phys(RenderWindow& window)
+void Game_Menu::run_phys(RenderWindow& window)
 {
     Map map("phys_map.png");
 

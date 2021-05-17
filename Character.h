@@ -1,7 +1,7 @@
 #ifndef __CHARACTER__H__
 #define __CHARACTER__H__
 
-
+#include "map.h"
 #include <SFML/Graphics.hpp>
 using namespace sf;
 
@@ -17,26 +17,27 @@ enum directions
 
 class Character
 {
-private:
-	float x, y, a, b, w, h, dx, dy, speed; 
-	int direction; 
-	String File; 
-	Image image;
-	Texture texture;
-	Sprite sprite;
+protected:
+	float x, y, a, b, w, h, dx, dy, speed; //координаты игрока х и у, высота ширина, ускорение (по х и по у), сама скорость
+	int direction; //направление  движения игрока
+	String File; //файл с расширением
+	Image image;//сфмл изображение
+	Texture texture;//сфмл текстура
+	Sprite sprite;//сфмл спрайт
 
 public:
 
-	Character(String F, float X, float Y, float A, float B, float W, float H); 
+	Character(String F, float X, float Y, float A, float B, float W, float H); //конструктор для всех одинаковый, новых полей не повятся - только методы
 	~Character();
 
+	Sprite get_sprite();
+	void update(float time); //реализация одинаковая, просто обработка направлений движения
+	virtual void interactionWithMap(Map& map, float time) = 0;//у каждого своя реализация, правда, отличия небольшие - у playera добавится только обработка препятствий
+	//override??
 
-	void update(float time); 
-	virtual bool interactionWithMap() = 0;
-
-	int get_direction();
+	/*int get_direction();*/
 
 
 };
 
-#endif //!__CHARACTER__H__
+#endif //!__CHATACTER__H__
