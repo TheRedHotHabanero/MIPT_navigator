@@ -48,7 +48,7 @@ public:
     string exit_button_ = "../images/exit_button.png";
     //--------------------------------------------------------------------
     void trick_button_pressed(RenderWindow& window) override;
-    void counting_points_pressed(RenderWindow& window);
+    //void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
     //void processing_keys(RenderWindow& window);
 };
