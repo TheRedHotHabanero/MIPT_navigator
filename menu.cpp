@@ -4,6 +4,7 @@
 
 #include "menu.h"
 #include "phystech_menu.h"
+#include "phystech_school.h"
 
 void Menu::create_menu_background(const string &menu_background_)
 {

@@ -21,7 +21,7 @@
 using namespace sf;
 using std::string;
 
-class Phystech_Menu: public Phystech_School
+class Phystech_Menu//: public Phystech_School
 {
 private:
     //----------------------------------------button`s number:

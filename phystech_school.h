@@ -99,17 +99,17 @@ protected:
 
 public:
     //calculation of receipts
-    virtual void counting_points(int number_of_subjects, int summ);
+    //virtual void counting_points(int number_of_subjects, int summ);
 
     //sound playback, but her znaet if I need a function to play sound
-    virtual void make_sound(const string &sound_);
+    //virtual void make_sound(const string &sound_);
 
     //------------------------------------------------------creating bottons and background:
     void create_exit_button(string &exit_button_);
     void create_phystech_school_background(string &phystech_school_background_);
-    void create_counting_points_button(string &counting_points_button_);
-    void create_trick_button(string &trick_button_);
-    void create_text_title(string &title_text_, string text_);
+    void create_counting_points_button(string &counting_points_button_){};
+    void create_trick_button(string &trick_button_){};
+    void create_text_title(string &title_text_, string text_){};
     void show_school_information(string &font_, string &text_);
     void create_text_title(string &text_);
     //-------------------------------------------------------------------------------------
@@ -122,7 +122,7 @@ public:
                                      string &counting_points_button_); // virtual because different titles
 
     //---------------------------------------------------------pressed keys:
-    virtual void trick_button_pressed(RenderWindow &window);
+    virtual void trick_button_pressed(RenderWindow &window) = 0;
     void exit_button_pressed(RenderWindow &window);
     void counting_points_pressed(RenderWindow &window);
     //---------------------------------------------------------------------

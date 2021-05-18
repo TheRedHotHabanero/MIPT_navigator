@@ -19,6 +19,7 @@ void Phystech_School::create_phystech_school_background(string &phystech_school_
     phystech_school_background_sprite.setPosition(WINDOW_POSITION_X, WINDOW_POSITION_Y);
 }
 
+
 void Phystech_School::create_text_title(string &text_) {
     title.setString(text_);
     title.setFont(font);
