@@ -79,9 +79,9 @@ public:
         const string& math_department_button_,
         const string& physics_department_button_);
 
-    void math_department_button_pressed(RenderWindow& window);
+    static void math_department_button_pressed(RenderWindow& window);
     void physics_department_button_pressed(RenderWindow& window);
-    void game_exit_button_pressed(RenderWindow& window);
+    static void game_exit_button_pressed(RenderWindow& window);
     void processing_menu(RenderWindow& window);
     //------------------------------------------------------------------
 };

@@ -8,7 +8,7 @@
 #include <string>
 #include <iostream>
 
-#include "phystech_school.h"
+//#include "phystech_school.h"
 #include "frkt.h"
 #include "lfi.h"
 #include "faki.h"

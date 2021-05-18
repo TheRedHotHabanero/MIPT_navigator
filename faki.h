@@ -12,6 +12,23 @@ class Faki : public Phystech_School
 {
 protected:
 
+    Image exit_button;
+    Texture exit_button_texture;
+    Sprite exit_button_sprite;
+
+    Image trick_button;
+    Texture trick_button_texture;
+    Sprite trick_button_sprite;
+
+public:
+
+    //---------------------------------exit button parameters:
+    const static int EXIT_BUTTON_POS_X = 1110;
+    const static int EXIT_BUTTON_POS_Y = 600;
+    const static int EXIT_BUTTON_WIDTH = 57;
+    const static int EXIT_BUTTON_HEIGHT = 51;
+    //--------------------------------------------------------
+
     //---------------------------------trick button parameters:
     const static int TRICK_BUTTON_POS_X = 235;
     const static int TRICK_BUTTON_POS_Y = 130;
@@ -26,15 +43,6 @@ protected:
     const static int COUNTING_POINTS_HEIGHT = 188;
     //--------------------------------------------------------
 
-    Image exit_button;
-    Texture exit_button_texture;
-    Sprite exit_button_sprite;
-
-    Image trick_button;
-    Texture trick_button_texture;
-    Sprite trick_button_sprite;
-
-public:
     //---------------------------------------------------------page params:
     string title_text_;
     string font_for_title_;
