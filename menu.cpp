@@ -65,9 +65,6 @@ void Menu::welcome_page(const string& menu_background_,
 
 void Menu::start_info_button_pressed(RenderWindow &window)
 {
-    //RenderWindow start_info(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Сhoose your physics-school!");
-    //std::cout << "start_info_button_pressed" << std::endl;
-    //window.display();
     window.close();
     Phystech_Menu phystech_menu;
     phystech_menu.phystech_page();
@@ -78,12 +75,9 @@ void Menu::checking_odds_button_pressed(RenderWindow &window)
     window.close();
     Game_Menu game_menu;
     game_menu.game_welcome_page("../game_images/game_menu_background.jpg",
-                                "../game_images/game_exit_button.jpg",
-                                "../game_images/math_department_button.png",
-                                "../game_images/physics_department_button.png");
-
-    //window.draw(game_menu.welcome_page())
-    //std::cout << "checking_odds_pressed" << std::endl;
+                                "../images/exit_button.png",
+                                "../images/kvm.png",
+                                "../images/kof.png");
 }
 
 void Menu::exit_button_pressed(RenderWindow& window)

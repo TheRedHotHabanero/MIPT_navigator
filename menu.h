@@ -36,7 +36,7 @@ private:
     //--------------------------------------------------------
 
     //-------------------------checking odds button parameters:
-    const static int CHECKING_ODDS_BUTTON_POS_X = 245;
+    const static int CHECKING_ODDS_BUTTON_POS_X = 235;
     const static int CHECKING_ODDS_BUTTON_POS_Y = 330;
     const static int CHECKING_ODDS_BUTTON_WIDTH = 332;
     const static int CHECKING_ODDS_BUTTON_HEIGHT = 164;

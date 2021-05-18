@@ -78,7 +78,7 @@ void Phystech_Menu::create_exit_button(const string& exit_button_)
 void Phystech_Menu::phystech_page()                    //phystech menu
 {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT),
-                        "MIPT UNIVERSITY");
+                        "MIPT DEPARTMENTS");
 
     string phystech_background_ = "../images/phystech_background.jpg";
     string exit_button_ = "../images/exit_button.png";
