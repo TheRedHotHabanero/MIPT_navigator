@@ -7,6 +7,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include <iostream>
+#include "Game_Menu.h"
 
 using namespace sf;
 using std::string;

@@ -44,13 +44,13 @@ public:
     string text_;
     string trick_button_ = "../images/tricks/frkt_trick.png";
     string counting_points_button_ = "../images/counting_points_button.png";
-    string phystech_background_ = "../images/school_backs/frkt_back.png";
+    string phystech_background_ = "../images/school_backs/frkt_back.jpg";
     string exit_button_ = "../images/exit_button.png";
     //--------------------------------------------------------------------
-    void trick_button_pressed(RenderWindow& window);
+    void trick_button_pressed(RenderWindow& window) override;
     void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
-    void processing_keys(RenderWindow& window);
+    //void processing_keys(RenderWindow& window);
 };
 
 #define MIPT_NAVIGATOR_FRKT_H
