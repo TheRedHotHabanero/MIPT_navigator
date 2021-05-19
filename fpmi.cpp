@@ -10,13 +10,7 @@ void Fpmi::trick_button_pressed()
 {
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "---------------------GAY ROMANCE-----------------" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     buffer.loadFromFile("../sound/fpmi.ogg");

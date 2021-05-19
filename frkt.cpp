@@ -9,13 +9,7 @@ void Frkt::trick_button_pressed()
 {
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "--------------------------MEOWWWWWWWWWWWWWWWWWW---------------------------" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     buffer.loadFromFile("../sound/frkt.ogg");

@@ -10,14 +10,8 @@ void Inbicst::trick_button_pressed()
 {
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "-----Why you babysitting only two or three shots?----" << std::endl;
     std::cout << "-----I'ma show you how to turn it up a notch---------" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     buffer.loadFromFile("../sound/inbicst.ogg");

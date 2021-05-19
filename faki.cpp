@@ -10,13 +10,7 @@ void Faki::trick_button_pressed()
 {
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "--------------------------ZZZZZZZZZZZZZZZZZZZZZ---------------------------" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
 

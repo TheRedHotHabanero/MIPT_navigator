@@ -9,13 +9,7 @@ void Fbmf::trick_button_pressed()
 {
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "...............................pain.................................." << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     buffer.loadFromFile("../sound/fbmf.ogg");

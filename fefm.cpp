@@ -9,9 +9,6 @@ void Fefm::trick_button_pressed()
 {
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "Графе́н (англ. graphene) — двумерная аллотропная модификация углерода," << std::endl;
     std::cout << "образованная слоем атомов углерода толщиной в один атом. Атомы углерода" << std::endl;
     std::cout << "находятся в sp²-гибридизации и соединены посредством σ- и π-связей в " << std::endl;
@@ -25,9 +22,10 @@ void Fefm::trick_button_pressed()
     std::cout << "наноэлектроники и возможную замену кремния в интегральных микросхемах." << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
+
+    buffer.loadFromFile("../sound/fefm.ogg");
+    sound.setBuffer(buffer);
+    sound.play();
 }
 
 Sprite Fefm::create_trick_button()
