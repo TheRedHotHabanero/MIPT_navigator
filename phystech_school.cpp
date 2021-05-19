@@ -60,16 +60,14 @@ void Phystech_School::welcome_school_page(string &trick_button_,
 
     create_phystech_school_background(phystech_background_);
     create_exit_button(exit_button_);
-    create_counting_points_button();
     create_text_title(text_);
-    create_trick_button();
 
     //window.clear();
 
     window.draw(phystech_school_background_sprite);
     window.draw(exit_button_sprite);
-    window.draw(trick_button_sprite);
-    window.draw(counting_points_sprite);
+    window.draw(create_trick_button());
+    window.draw(create_counting_points_button());
     window.draw(title);
 
     window.display();

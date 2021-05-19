@@ -107,8 +107,8 @@ public:
     //------------------------------------------------------creating bottons and background:
     void create_exit_button(string &exit_button_);
     void create_phystech_school_background(string &phystech_school_background_);
-    virtual void create_counting_points_button() = 0;
-    virtual void create_trick_button() = 0;
+    virtual Sprite create_counting_points_button() = 0;
+    virtual Sprite create_trick_button() = 0;
     void create_text_title(string &title_text_, string text_){};
     void show_school_information(string &font_, string &text_);
     void create_text_title(string &text_);

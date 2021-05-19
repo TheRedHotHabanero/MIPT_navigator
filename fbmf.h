@@ -52,8 +52,8 @@ public:
     void trick_button_pressed(RenderWindow& window) override;
     //void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
-    void create_counting_points_button() override;
-    void create_trick_button() override;
+    Sprite create_counting_points_button() override;
+    Sprite create_trick_button() override;
 };
 
 
