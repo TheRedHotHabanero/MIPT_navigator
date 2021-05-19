@@ -23,5 +23,5 @@ public:
 };
 
 
-#endif __PLAYER__H__
+#endif //!__PLAYER__H__
 
