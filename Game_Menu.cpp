@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Fucker.h"
 #include "map.h"
+#include "menu.h";
 
 using namespace sf;
 
@@ -228,14 +229,14 @@ void Game_Menu::run_phys(RenderWindow& window)
     }
 }
 
-//---------processing bottons (грубо говоря: что делает каждая кнопка при нажатии)
+//---------processing bottons (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
 
 
 //OK
 void Game_Menu:: game_welcome_page(const string& game_menu_background_,
     const string& game_exit_button_,
     const string& math_department_button_,
-    const string& physics_department_button_)//создание всего, рисование всего
+    const string& physics_department_button_)//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
 {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "EXAM SIMULATOR");
     create_game_menu_background(game_menu_background_);
@@ -274,14 +275,19 @@ void Game_Menu::physics_department_button_pressed(RenderWindow& window)
 
 
 //OK
-void Game_Menu::game_exit_button_pressed(RenderWindow& window)//почему статик
+void Game_Menu::game_exit_button_pressed(RenderWindow& window)//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 {
     window.close();
+    Menu menu;
+    menu.welcome_page("../images/menu_background.jpg",
+                      "../images/start_info_button.png",
+                      "../images/exit_button.png",
+                      "../images/checking_odds_button.png");
 }
 
 
 //OK
-void Game_Menu::processing_menu(RenderWindow& window) //само меню со всеми кликабельными кнопочками
+void Game_Menu::processing_menu(RenderWindow& window) //пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 {
     while (window.isOpen())
     {

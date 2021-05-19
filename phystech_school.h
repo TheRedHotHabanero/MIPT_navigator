@@ -55,6 +55,18 @@ protected:
     const static int WINDOW_HEIGHT = 675;
     //---------------------------------------------------------
 
+    //------------------------------for future phystech-schools:
+    int COUNTING_POINTS_POS_X;
+    int COUNTING_POINTS_POS_Y;
+    int COUNTING_POINTS_WIDTH;
+    int COUNTING_POINTS_HEIGHT;
+
+    int TRICK_BUTTON_POS_X;
+    int TRICK_BUTTON_POS_Y;
+    int TRICK_BUTTON_WIDTH;
+    int TRICK_BUTTON_HEIGHT;
+    //---------------------------------------------------------
+
     //----------------------------------------title parameters:
     const static int TITLE_CHARACTER_SIZE = 30;
     const static int TEXT_CHARACTER_SIZE = 18;
@@ -84,25 +96,9 @@ protected:
     Texture phystech_school_background_texture;
     Sprite phystech_school_background_sprite;
     //---------------------------------------------------------
-    //------------------------------for future phystech-schools:
-    int COUNTING_POINTS_POS_X;
-    int COUNTING_POINTS_POS_Y;
-    int COUNTING_POINTS_WIDTH;
-    int COUNTING_POINTS_HEIGHT;
-
-    int TRICK_BUTTON_POS_X;
-    int TRICK_BUTTON_POS_Y;
-    int TRICK_BUTTON_WIDTH;
-    int TRICK_BUTTON_HEIGHT;
-    //---------------------------------------------------------
     int phystech_school_menu_num = 0;
 
 public:
-    //calculation of receipts
-    //virtual void counting_points(int number_of_subjects, int summ);
-
-    //sound playback, but her znaet if I need a function to play sound
-    //virtual void make_sound(const string &sound_);
 
     //------------------------------------------------------creating bottons and background:
     void create_exit_button(string &exit_button_);
@@ -114,13 +110,11 @@ public:
     void create_text_title(string &text_);
     //-------------------------------------------------------------------------------------
 
-    //the first window of the Phystech School (like welcome_page from menu)
     void welcome_school_page(string &trick_button_,
                              string &title_text_,
                              string &phystech_background_,
                              string &exit_button_,
                              string &counting_points_button_);
-                             //string &font_, string &text_);
 
     //---------------------------------------------------------pressed keys:
     virtual void trick_button_pressed(RenderWindow &window) = 0;
@@ -128,20 +122,7 @@ public:
     void counting_points_pressed(RenderWindow &window);
     //---------------------------------------------------------------------
 
-    //processing keys
-    void processing_keys(RenderWindow &window,
-                         int COUNTING_POINTS_POS_X,
-                         int COUNTING_POINTS_POS_Y,
-                         int COUNTING_POINTS_WIDTH,
-                         int COUNTING_POINTS_HEIGHT,
-                         int TRICK_BUTTON_POS_X,
-                         int TRICK_BUTTON_POS_Y,
-                         int TRICK_BUTTON_WIDTH,
-                         int TRICK_BUTTON_HEIGHT,
-                         int EXIT_BUTTON_POS_X,
-                         int EXIT_BUTTON_POS_Y,
-                         int EXIT_BUTTON_WIDTH,
-                         int EXIT_BUTTON_HEIGHT);
+    void processing_keys(RenderWindow &window);
 
 };
 
