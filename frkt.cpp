@@ -18,9 +18,7 @@ void Frkt::trick_button_pressed()
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    SoundBuffer buffer;
-    Sound sound;
-    buffer.loadFromFile("../sound/frkt.wav");
+    buffer.loadFromFile("../sound/frkt.ogg");
     sound.setBuffer(buffer);
     sound.play();
 }

@@ -5,6 +5,7 @@
 #ifndef MIPT_NAVIGATOR_PHYSTECH_SCHOOL_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <string>
 #include <iostream>
 #include <fstream>

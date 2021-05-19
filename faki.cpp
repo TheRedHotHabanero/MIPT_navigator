@@ -19,9 +19,8 @@ void Faki::trick_button_pressed()
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    SoundBuffer buffer;
-    Sound sound;
-    buffer.loadFromFile("../sound/fakt.wav");
+
+    buffer.loadFromFile("../sound/fakt.ogg");
     sound.setBuffer(buffer);
     sound.play();
 }
@@ -67,7 +66,8 @@ void Faki::processing_keys(RenderWindow &window)
                 phystech_school_menu_num = EXIT;
 
 
-            if (Mouse::isButtonPressed(Mouse::Left)) {
+            if (Mouse::isButtonPressed(Mouse::Left))
+            {
                 if (phystech_school_menu_num == TRICK)
                     trick_button_pressed();
                 else if (phystech_school_menu_num == EXIT)

@@ -18,9 +18,7 @@ void Fbmf::trick_button_pressed()
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    SoundBuffer buffer;
-    buffer.loadFromFile("../sound/fbmf.wav");
-    Sound sound;
+    buffer.loadFromFile("../sound/fbmf.ogg");
     sound.setBuffer(buffer);
     sound.play();
 

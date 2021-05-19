@@ -8,8 +8,6 @@
 
 void Fpmi::trick_button_pressed()
 {
-    SoundBuffer buffer;
-    Sound sound;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
@@ -21,7 +19,7 @@ void Fpmi::trick_button_pressed()
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    buffer.loadFromFile("../sound/fpmi.wav");
+    buffer.loadFromFile("../sound/fpmi.ogg");
     sound.setBuffer(buffer);
     sound.play();
 

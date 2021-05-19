@@ -19,9 +19,8 @@ void Lfi::trick_button_pressed()
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    SoundBuffer buffer;
-    Sound sound;
-    buffer.loadFromFile("../sound/lfi.wav");
+
+    buffer.loadFromFile("../sound/lfi.ogg");
     sound.setBuffer(buffer);
     sound.play();
 }

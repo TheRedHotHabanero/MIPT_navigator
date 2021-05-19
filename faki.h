@@ -23,6 +23,9 @@ protected:
     Image counting_points_button;
     Texture counting_points_texture;
     Sprite counting_points_sprite;
+
+    SoundBuffer buffer;
+    Sound sound;
 public:
 
     //---------------------------------trick button parameters:

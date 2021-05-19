@@ -25,6 +25,9 @@ protected:
     Texture trick_button_texture;
     Sprite trick_button_sprite;
 
+    SoundBuffer buffer;
+    Sound sound;
+
 public:
 
     //---------------------------------trick button parameters:
