@@ -2,6 +2,8 @@
 // Created by karina on 12.05.2021.
 //
 #include "phystech_school.h"
+#include "phystech_menu.h"
+#include "menu.h"
 
 void Phystech_School::create_exit_button(string &exit_button_)
 {
@@ -20,11 +22,12 @@ void Phystech_School::create_phystech_school_background(string &phystech_school_
 }
 
 
-void Phystech_School::create_text_title(string &text_) {
+void Phystech_School::create_text_title(string &text_)
+{
     title.setString(text_);
     title.setFont(font);
     title.setCharacterSize(TITLE_CHARACTER_SIZE);
-    title.setColor(Color::Black);
+    //title.setColor(Color::Black);
     title.setPosition(TITLE_POS_X, TITLE_POS_Y);
 }
 
@@ -57,16 +60,14 @@ void Phystech_School::welcome_school_page(string &trick_button_,
 
     create_phystech_school_background(phystech_background_);
     create_exit_button(exit_button_);
-    create_counting_points_button(counting_points_button_);
-    create_text_title(title_text_, text_);
-    create_trick_button(trick_button_);
+    create_text_title(text_);
 
-    window.clear();
+    //window.clear();
 
     window.draw(phystech_school_background_sprite);
     window.draw(exit_button_sprite);
-    window.draw(trick_button_sprite);
-    window.draw(counting_points_sprite);
+    window.draw(create_trick_button());
+    window.draw(create_counting_points_button());
     window.draw(title);
 
     window.display();
@@ -78,12 +79,18 @@ void Phystech_School::welcome_school_page(string &trick_button_,
                     TRICK_BUTTON_POS_X,
                     TRICK_BUTTON_POS_Y,
                     TRICK_BUTTON_WIDTH,
-                    TRICK_BUTTON_HEIGHT);
+                    TRICK_BUTTON_HEIGHT,
+                    EXIT_BUTTON_POS_X,
+                    EXIT_BUTTON_POS_Y,
+                    EXIT_BUTTON_WIDTH,
+                    EXIT_BUTTON_HEIGHT);
 }
 
 void Phystech_School::exit_button_pressed(RenderWindow &window)
 {
-
+    window.close();
+    Phystech_Menu menu;
+    menu.phystech_page();
 }
 
 void Phystech_School::counting_points_pressed(RenderWindow &window){}
@@ -96,7 +103,11 @@ void Phystech_School::processing_keys(RenderWindow &window,
                                       int TRICK_BUTTON_POS_X,
                                       int TRICK_BUTTON_POS_Y,
                                       int TRICK_BUTTON_WIDTH,
-                                      int TRICK_BUTTON_HEIGHT)
+                                      int TRICK_BUTTON_HEIGHT,
+                                      int EXIT_BUTTON_POS_X,
+                                      int EXIT_BUTTON_POS_Y,
+                                      int EXIT_BUTTON_WIDTH,
+                                      int EXIT_BUTTON_HEIGHT)
 {
     while (window.isOpen())
     {

@@ -15,20 +15,6 @@ class Frkt : public Phystech_School
 {
 protected:
 
-    //---------------------------------trick button parameters:
-    const static int TRICK_BUTTON_POS_X = 900;
-    const static int TRICK_BUTTON_POS_Y = 500;
-    const static int TRICK_BUTTON_WIDTH = 287;
-    const static int TRICK_BUTTON_HEIGHT = 166;
-    //--------------------------------------------------------
-
-    // ------------------------counting point button parameters:
-    const static int COUNTING_POINTS_POS_X = 900;
-    const static int COUNTING_POINTS_POS_Y = 200;
-    const static int COUNTING_POINTS_WIDTH = 414;
-    const static int COUNTING_POINTS_HEIGHT = 208;
-    //--------------------------------------------------------
-
     Image exit_button;
     Texture exit_button_texture;
     Sprite exit_button_sprite;
@@ -37,7 +23,25 @@ protected:
     Texture trick_button_texture;
     Sprite trick_button_sprite;
 
+    Image counting_points_button;
+    Texture counting_points_texture;
+    Sprite counting_points_sprite;
+
 public:
+    //---------------------------------trick button parameters:
+    const static int TRICK_BUTTON_POS_X = 900;
+    const static int TRICK_BUTTON_POS_Y = 20;
+    const static int TRICK_BUTTON_WIDTH = 287;
+    const static int TRICK_BUTTON_HEIGHT = 166;
+    //--------------------------------------------------------
+
+    // ------------------------counting point button parameters:
+    const static int COUNTING_POINTS_POS_X = 770;
+    const static int COUNTING_POINTS_POS_Y = 250;
+    const static int COUNTING_POINTS_WIDTH = 414;
+    const static int COUNTING_POINTS_HEIGHT = 208;
+    //--------------------------------------------------------
+
     //---------------------------------------------------------page params:
     string title_text_;
     string font_for_title_;
@@ -48,9 +52,11 @@ public:
     string exit_button_ = "../images/exit_button.png";
     //--------------------------------------------------------------------
     void trick_button_pressed(RenderWindow& window) override;
-    void counting_points_pressed(RenderWindow& window);
+    //void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
     //void processing_keys(RenderWindow& window);
+    Sprite create_counting_points_button() override;
+    Sprite create_trick_button() override;
 };
 
 #define MIPT_NAVIGATOR_FRKT_H

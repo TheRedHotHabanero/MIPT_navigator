@@ -70,15 +70,15 @@ void Phystech_Menu::create_inbicst_button(const string& inbicst_button_)
 void Phystech_Menu::create_exit_button(const string& exit_button_)
 {
     exit_button.loadFromFile(exit_button_);
-    exit_button_texture.loadFromImage(inbicst_button);
-    exit_button_sprite.setTexture(inbicst_texture);
-    exit_button_sprite.setPosition(INBICST_BUTTON_POS_X, INBICST_BUTTON_POS_Y);
+    exit_button_texture.loadFromImage(exit_button);
+    exit_button_sprite.setTexture(exit_button_texture);
+    exit_button_sprite.setPosition(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y);
 }
 
 void Phystech_Menu::phystech_page()                    //phystech menu
 {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT),
-                        "MIPT UNIVERSITY");
+                        "MIPT DEPARTMENTS");
 
     string phystech_background_ = "../images/phystech_background.jpg";
     string exit_button_ = "../images/exit_button.png";
@@ -110,7 +110,7 @@ void Phystech_Menu::phystech_page()                    //phystech menu
     window.draw(faki_sprite);
     window.draw(fefm_sprite);
     window.draw(fpmi_sprite);
-    window.draw(fefm_sprite);
+    window.draw(fbmf_sprite);
     window.draw(inbicst_sprite);
 
     window.display();
@@ -119,6 +119,7 @@ void Phystech_Menu::phystech_page()                    //phystech menu
 
 void Phystech_Menu::frkt_pressed(RenderWindow& window)
 {
+    window.close();
     Frkt frkt;
     frkt.welcome_school_page(frkt.trick_button_,
                              frkt.title_text_,
@@ -130,6 +131,7 @@ void Phystech_Menu::frkt_pressed(RenderWindow& window)
 
 void Phystech_Menu::lfi_pressed(RenderWindow& window)
 {
+    window.close();
     Lfi lfi;
     lfi.welcome_school_page(lfi.trick_button_,
                             lfi.title_text_,
@@ -140,6 +142,7 @@ void Phystech_Menu::lfi_pressed(RenderWindow& window)
 
 void Phystech_Menu::faki_pressed(RenderWindow& window)
 {
+    window.close();
     Faki faki;
     faki.welcome_school_page(faki.trick_button_,
                              faki.title_text_,
@@ -150,6 +153,7 @@ void Phystech_Menu::faki_pressed(RenderWindow& window)
 
 void Phystech_Menu::fefm_pressed(RenderWindow& window)
 {
+    window.close();
     Fefm fefm;
     fefm.welcome_school_page(fefm.trick_button_,
                              fefm.title_text_,
@@ -160,6 +164,7 @@ void Phystech_Menu::fefm_pressed(RenderWindow& window)
 
 void Phystech_Menu::fpmi_pressed(RenderWindow& window)
 {
+    window.close();
     Fpmi fpmi;
     fpmi.welcome_school_page(fpmi.trick_button_,
                              fpmi.title_text_,
@@ -170,6 +175,7 @@ void Phystech_Menu::fpmi_pressed(RenderWindow& window)
 
 void Phystech_Menu::fbmf_pressed(RenderWindow& window)
 {
+    window.close();
     Fbmf fbmf;
     fbmf.welcome_school_page(fbmf.trick_button_,
                              fbmf.title_text_,
@@ -181,6 +187,7 @@ void Phystech_Menu::fbmf_pressed(RenderWindow& window)
 
 void Phystech_Menu::inbicst_pressed(RenderWindow& window)
 {
+    window.close();
     Inbicst inbicst;
     inbicst.welcome_school_page(inbicst.trick_button_,
                                 inbicst.title_text_,
@@ -191,6 +198,7 @@ void Phystech_Menu::inbicst_pressed(RenderWindow& window)
 
 void Phystech_Menu::exit_button_pressed(RenderWindow& window)
 {
+    window.close();
     Menu new_menu;
     new_menu.welcome_page("../images/menu_background.jpg",
                           "../images/start_info_button.png",

@@ -2,6 +2,8 @@
 #include "Player.h"
 #include "Fucker.h"
 #include "map.h"
+#include "menu.h"
+
 using namespace sf;
 
 
@@ -161,7 +163,7 @@ void Game_Menu:: game_welcome_page(const string& game_menu_background_,
     const string& math_department_button_,
     const string& physics_department_button_)//�������� �����, ��������� �����
 {
-    RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "THE ARK");
+    RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "TAKE THE EXAM");
     create_game_menu_background(game_menu_background_);
     create_math_department_button(math_department_button_);
     create_physics_department_button(physics_department_button_);
@@ -193,6 +195,11 @@ void Game_Menu::physics_department_button_pressed(RenderWindow& window)
 void Game_Menu::game_exit_button_pressed(RenderWindow& window)//������ ������
 {
     window.close();
+    Menu menu;
+    menu.welcome_page("../images/menu_background.jpg",
+                 "../images/start_info_button.png",
+                 "../images/exit_button.png",
+                 "../images/checking_odds_button.png");
 }
 
 

@@ -84,12 +84,12 @@ protected:
     Texture phystech_school_background_texture;
     Sprite phystech_school_background_sprite;
     //---------------------------------------------------------
-
     //------------------------------for future phystech-schools:
     int COUNTING_POINTS_POS_X;
     int COUNTING_POINTS_POS_Y;
     int COUNTING_POINTS_WIDTH;
     int COUNTING_POINTS_HEIGHT;
+
     int TRICK_BUTTON_POS_X;
     int TRICK_BUTTON_POS_Y;
     int TRICK_BUTTON_WIDTH;
@@ -107,8 +107,8 @@ public:
     //------------------------------------------------------creating bottons and background:
     void create_exit_button(string &exit_button_);
     void create_phystech_school_background(string &phystech_school_background_);
-    void create_counting_points_button(string &counting_points_button_){};
-    void create_trick_button(string &trick_button_){};
+    virtual Sprite create_counting_points_button() = 0;
+    virtual Sprite create_trick_button() = 0;
     void create_text_title(string &title_text_, string text_){};
     void show_school_information(string &font_, string &text_);
     void create_text_title(string &text_);
@@ -116,14 +116,15 @@ public:
 
     //the first window of the Phystech School (like welcome_page from menu)
     void welcome_school_page(string &trick_button_,
-                                     string &title_text_,
-                                     string &phystech_background_,
-                                     string &exit_button_,
-                                     string &counting_points_button_); // virtual because different titles
+                             string &title_text_,
+                             string &phystech_background_,
+                             string &exit_button_,
+                             string &counting_points_button_);
+                             //string &font_, string &text_);
 
     //---------------------------------------------------------pressed keys:
     virtual void trick_button_pressed(RenderWindow &window) = 0;
-    void exit_button_pressed(RenderWindow &window);
+    static void exit_button_pressed(RenderWindow &window);
     void counting_points_pressed(RenderWindow &window);
     //---------------------------------------------------------------------
 
@@ -136,7 +137,11 @@ public:
                          int TRICK_BUTTON_POS_X,
                          int TRICK_BUTTON_POS_Y,
                          int TRICK_BUTTON_WIDTH,
-                         int TRICK_BUTTON_HEIGHT);
+                         int TRICK_BUTTON_HEIGHT,
+                         int EXIT_BUTTON_POS_X,
+                         int EXIT_BUTTON_POS_Y,
+                         int EXIT_BUTTON_WIDTH,
+                         int EXIT_BUTTON_HEIGHT);
 
 };
 
