@@ -20,6 +20,10 @@ protected:
     Texture trick_button_texture;
     Sprite trick_button_sprite;
 
+    Image counting_points_button;
+    Texture counting_points_texture;
+    Sprite counting_points_sprite;
+
 public:
     //---------------------------------trick button parameters:
     const static int TRICK_BUTTON_POS_X = 900;
@@ -48,6 +52,8 @@ public:
     void trick_button_pressed(RenderWindow& window) override;
     //void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
+    void create_counting_points_button() override;
+    void create_trick_button() override;
 };
 
 

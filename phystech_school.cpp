@@ -21,29 +21,13 @@ void Phystech_School::create_phystech_school_background(string &phystech_school_
     phystech_school_background_sprite.setPosition(WINDOW_POSITION_X, WINDOW_POSITION_Y);
 }
 
-void Phystech_School::create_trick_button(string &trick_button_)
-{
-    trick_button.loadFromFile(trick_button_);
-    trick_button_texture.loadFromImage(trick_button);
-    trick_button_sprite.setTexture(trick_button_texture);
-    trick_button_sprite.setPosition(TRICK_BUTTON_POS_X, TRICK_BUTTON_POS_Y);
-}
-
-void Phystech_School::create_counting_points_button(string &counting_points_button_)
-{
-    counting_points_button.loadFromFile(counting_points_button_);
-    counting_points_texture.loadFromImage(counting_points_button);
-    counting_points_sprite.setTexture(counting_points_texture);
-    counting_points_sprite.setPosition(COUNTING_POINTS_POS_X, COUNTING_POINTS_POS_Y);
-}
-
 
 void Phystech_School::create_text_title(string &text_)
 {
     title.setString(text_);
     title.setFont(font);
     title.setCharacterSize(TITLE_CHARACTER_SIZE);
-    title.setColor(Color::Black);
+    //title.setColor(Color::Black);
     title.setPosition(TITLE_POS_X, TITLE_POS_Y);
 }
 
@@ -76,12 +60,11 @@ void Phystech_School::welcome_school_page(string &trick_button_,
 
     create_phystech_school_background(phystech_background_);
     create_exit_button(exit_button_);
-    create_counting_points_button(counting_points_button_);
-    create_text_title(title_text_, text_);
-    create_trick_button(trick_button_);
+    create_counting_points_button();
+    create_text_title(text_);
+    create_trick_button();
 
-
-    window.clear();
+    //window.clear();
 
     window.draw(phystech_school_background_sprite);
     window.draw(exit_button_sprite);

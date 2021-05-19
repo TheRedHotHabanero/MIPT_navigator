@@ -20,6 +20,9 @@ protected:
     Texture trick_button_texture;
     Sprite trick_button_sprite;
 
+    Image counting_points_button;
+    Texture counting_points_texture;
+    Sprite counting_points_sprite;
 public:
 
     //---------------------------------exit button parameters:
@@ -57,6 +60,8 @@ public:
     //void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
     //void processing_keys(RenderWindow& window);
+    void create_counting_points_button() override;
+    void create_trick_button() override;
 };
 
 #define MIPT_NAVIGATOR_FAKI_H

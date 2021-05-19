@@ -24,7 +24,19 @@ protected:
     Texture trick_button_texture;
     Sprite trick_button_sprite;
 
+    Image counting_points_button;
+    Texture counting_points_texture;
+    Sprite counting_points_sprite;
+
 public:
+
+    //---------------------------------exit button parameters:
+    const static int EXIT_BUTTON_POS_X = 1110;
+    const static int EXIT_BUTTON_POS_Y = 600;
+    const static int EXIT_BUTTON_WIDTH = 57;
+    const static int EXIT_BUTTON_HEIGHT = 51;
+    //--------------------------------------------------------
+
     //---------------------------------trick button parameters:
     const static int TRICK_BUTTON_POS_X = 900;
     const static int TRICK_BUTTON_POS_Y = 30;
@@ -52,6 +64,8 @@ public:
     //void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
     //void processing_keys(RenderWindow& window);
+    void create_counting_points_button() override;
+    void create_trick_button() override;
 };
 
 
