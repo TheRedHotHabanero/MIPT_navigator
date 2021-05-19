@@ -25,23 +25,16 @@ protected:
     Sprite counting_points_sprite;
 public:
 
-    //---------------------------------exit button parameters:
-    const static int EXIT_BUTTON_POS_X = 1110;
-    const static int EXIT_BUTTON_POS_Y = 600;
-    const static int EXIT_BUTTON_WIDTH = 57;
-    const static int EXIT_BUTTON_HEIGHT = 51;
-    //--------------------------------------------------------
-
     //---------------------------------trick button parameters:
-    const static int TRICK_BUTTON_POS_X = 235;
-    const static int TRICK_BUTTON_POS_Y = 130;
+    const static int TRICK_BUTTON_POS_X = 900;
+    const static int TRICK_BUTTON_POS_Y = 50;
     const static int TRICK_BUTTON_WIDTH = 350;
     const static int TRICK_BUTTON_HEIGHT = 188;
     //--------------------------------------------------------
 
     // ------------------------counting point button parameters:
-    const static int COUNTING_POINTS_POS_X = 100;
-    const static int COUNTING_POINTS_POS_Y = 100;
+    const static int COUNTING_POINTS_POS_X = 770;
+    const static int COUNTING_POINTS_POS_Y = 300;
     const static int COUNTING_POINTS_WIDTH = 350;
     const static int COUNTING_POINTS_HEIGHT = 188;
     //--------------------------------------------------------

@@ -27,14 +27,14 @@ protected:
 public:
     //---------------------------------trick button parameters:
     const static int TRICK_BUTTON_POS_X = 900;
-    const static int TRICK_BUTTON_POS_Y = 200;
+    const static int TRICK_BUTTON_POS_Y = 150;
     const static int TRICK_BUTTON_WIDTH = 287;
     const static int TRICK_BUTTON_HEIGHT = 187;
     //--------------------------------------------------------
 
     // ------------------------counting point button parameters:
-    const static int COUNTING_POINTS_POS_X = 900;
-    const static int COUNTING_POINTS_POS_Y = 500;
+    const static int COUNTING_POINTS_POS_X = 770;
+    const static int COUNTING_POINTS_POS_Y = 350;
     const static int COUNTING_POINTS_WIDTH = 414;
     const static int COUNTING_POINTS_HEIGHT = 208;
     //--------------------------------------------------------

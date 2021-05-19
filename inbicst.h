@@ -33,13 +33,13 @@ public:
 
     //---------------------------------trick button parameters:
     const static int TRICK_BUTTON_POS_X = 900;
-    const static int TRICK_BUTTON_POS_Y = 30;
+    const static int TRICK_BUTTON_POS_Y = 50;
     const static int TRICK_BUTTON_WIDTH = 287;
     const static int TRICK_BUTTON_HEIGHT = 187;
     //--------------------------------------------------------
 
     // ------------------------counting point button parameters:
-    const static int COUNTING_POINTS_POS_X = 900;
+    const static int COUNTING_POINTS_POS_X = 770;
     const static int COUNTING_POINTS_POS_Y = 300;
     const static int COUNTING_POINTS_WIDTH = 414;
     const static int COUNTING_POINTS_HEIGHT = 208;

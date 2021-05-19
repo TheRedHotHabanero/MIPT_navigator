@@ -30,23 +30,16 @@ protected:
 
 public:
 
-    //---------------------------------exit button parameters:
-    const static int EXIT_BUTTON_POS_X = 1110;
-    const static int EXIT_BUTTON_POS_Y = 600;
-    const static int EXIT_BUTTON_WIDTH = 57;
-    const static int EXIT_BUTTON_HEIGHT = 51;
-    //--------------------------------------------------------
-
     //---------------------------------trick button parameters:
-    const static int TRICK_BUTTON_POS_X = 900;
-    const static int TRICK_BUTTON_POS_Y = 30;
+    const static int TRICK_BUTTON_POS_X = 20;
+    const static int TRICK_BUTTON_POS_Y = 20;
     const static int TRICK_BUTTON_WIDTH = 287;
     const static int TRICK_BUTTON_HEIGHT = 187;
     //--------------------------------------------------------
 
     // ------------------------counting point button parameters:
-    const static int COUNTING_POINTS_POS_X = 900;
-    const static int COUNTING_POINTS_POS_Y = 330;
+    const static int COUNTING_POINTS_POS_X = 780;
+    const static int COUNTING_POINTS_POS_Y = 20;
     const static int COUNTING_POINTS_WIDTH = 414;
     const static int COUNTING_POINTS_HEIGHT = 208;
     //--------------------------------------------------------
