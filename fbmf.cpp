@@ -38,37 +38,29 @@ Sprite Fbmf::create_counting_points_button()
 
 void Fbmf::processing_keys(RenderWindow &window)
 {
-    int count = 0;
     while (window.isOpen())
     {
         Event event;
-        while (window.pollEvent(event)) {
+        while (window.pollEvent(event))
+        {
 
             if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
                 exit_button_pressed(window);
 
             if (IntRect(COUNTING_POINTS_POS_X, COUNTING_POINTS_POS_Y,
-                        COUNTING_POINTS_WIDTH, COUNTING_POINTS_HEIGHT).contains(Mouse::getPosition(window)))
-                phystech_school_menu_num = COUNTING_POINTS;
+                        COUNTING_POINTS_WIDTH, COUNTING_POINTS_HEIGHT).contains(Mouse::getPosition(window))
+                & Mouse::isButtonPressed(Mouse::Left))
+                counting_points_pressed(window);
 
             if (IntRect(TRICK_BUTTON_POS_X, TRICK_BUTTON_POS_Y,
-                        TRICK_BUTTON_WIDTH, TRICK_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystech_school_menu_num = TRICK;
+                        TRICK_BUTTON_WIDTH, TRICK_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                & Mouse::isButtonPressed(Mouse::Left))
+                trick_button_pressed();
 
             if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
-                        EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystech_school_menu_num = EXIT;
-
-
-            if (Mouse::isButtonPressed(Mouse::Left)) {
-                if (phystech_school_menu_num == TRICK and count == 0) {
-                    trick_button_pressed();
-                    count = 1;
-                } else if (phystech_school_menu_num == EXIT)
-                    exit_button_pressed(window);
-                else if (phystech_school_menu_num == COUNTING_POINTS)
-                    counting_points_pressed(window);
-            }
+                        EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                & Mouse::isButtonPressed(Mouse::Left))
+                exit_button_pressed(window);
         }
     }
 }
