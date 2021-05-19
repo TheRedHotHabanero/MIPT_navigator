@@ -69,7 +69,7 @@ public:
     void create_game_exit_button(const string& game_exit_button_);
 
     //-----------------------------running levels
-    static void run_math(RenderWindow& window);
+    void run_math(RenderWindow& window);
     void run_phys(RenderWindow& window);
 
     //------------------------------------------------processing bottons:
@@ -79,13 +79,13 @@ public:
         const string& math_department_button_,
         const string& physics_department_button_);
 
-    static void math_department_button_pressed(RenderWindow& window);
+    void math_department_button_pressed(RenderWindow& window);
     void physics_department_button_pressed(RenderWindow& window);
-    static void game_exit_button_pressed(RenderWindow& window);
+    void game_exit_button_pressed(RenderWindow& window);
     void processing_menu(RenderWindow& window);
     //------------------------------------------------------------------
 };
 
 
 
-#endif //!__GAME__MENU__
+#endif __GAME__MENU__

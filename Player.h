@@ -17,11 +17,11 @@ public:
 	Player(String F, float X, float Y, float A, float B, float W, float H);
 	~Player();
 
-	void interactionWithMap(Map& map, float time);
-	void control(float time, float& CurrentFrame);
+	bool interactionWithMap(Map& map, float time);
+	bool control(float time, float& CurrentFrame, Map& map);
 
 };
 
 
-#endif //!__PLAYER__H__
+#endif __PLAYER__H__
 
