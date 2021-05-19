@@ -5,10 +5,8 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-void Fbmf::trick_button_pressed(RenderWindow &window)
+void Fbmf::trick_button_pressed()
 {
-    SoundBuffer buffer;
-    Sound sound;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
@@ -20,9 +18,12 @@ void Fbmf::trick_button_pressed(RenderWindow &window)
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
+    SoundBuffer buffer;
     buffer.loadFromFile("../sound/fbmf.wav");
+    Sound sound;
     sound.setBuffer(buffer);
     sound.play();
+
 }
 
 Sprite Fbmf::create_trick_button()
@@ -41,4 +42,41 @@ Sprite Fbmf::create_counting_points_button()
     counting_points_sprite.setTexture(counting_points_texture);
     counting_points_sprite.setPosition(COUNTING_POINTS_POS_X, COUNTING_POINTS_POS_Y);
     return counting_points_sprite;
+}
+
+void Fbmf::processing_keys(RenderWindow &window)
+{
+    int count = 0;
+    while (window.isOpen())
+    {
+        Event event;
+        while (window.pollEvent(event)) {
+
+            if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
+                exit_button_pressed(window);
+
+            if (IntRect(COUNTING_POINTS_POS_X, COUNTING_POINTS_POS_Y,
+                        COUNTING_POINTS_WIDTH, COUNTING_POINTS_HEIGHT).contains(Mouse::getPosition(window)))
+                phystech_school_menu_num = COUNTING_POINTS;
+
+            if (IntRect(TRICK_BUTTON_POS_X, TRICK_BUTTON_POS_Y,
+                        TRICK_BUTTON_WIDTH, TRICK_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
+                phystech_school_menu_num = TRICK;
+
+            if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
+                        EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
+                phystech_school_menu_num = EXIT;
+
+
+            if (Mouse::isButtonPressed(Mouse::Left)) {
+                if (phystech_school_menu_num == TRICK and count == 0) {
+                    trick_button_pressed();
+                    count = 1;
+                } else if (phystech_school_menu_num == EXIT)
+                    exit_button_pressed(window);
+                else if (phystech_school_menu_num == COUNTING_POINTS)
+                    counting_points_pressed(window);
+            }
+        }
+    }
 }

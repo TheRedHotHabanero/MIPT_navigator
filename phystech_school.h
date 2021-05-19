@@ -117,12 +117,12 @@ public:
                              string &counting_points_button_);
 
     //---------------------------------------------------------pressed keys:
-    virtual void trick_button_pressed(RenderWindow &window) = 0;
+    virtual void trick_button_pressed() = 0;
     static void exit_button_pressed(RenderWindow &window);
     void counting_points_pressed(RenderWindow &window);
     //---------------------------------------------------------------------
 
-    void processing_keys(RenderWindow &window);
+    virtual void processing_keys(RenderWindow &window) = 0;
 
 };
 

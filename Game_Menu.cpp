@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "Fucker.h"
 #include "map.h"
-#include "menu.h";
+#include "menu.h"
 
 using namespace sf;
 
