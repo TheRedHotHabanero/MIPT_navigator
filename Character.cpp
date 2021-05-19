@@ -2,6 +2,7 @@
 #include "map.h"
 #include "Player.h"
 
+
 Character::Character(String F, float X, float Y, float A, float B, float W, float H)
 {  //Конструктор с параметрами(формальными) для класса Player. При создании объекта класса мы будем задавать имя файла, координату Х и У, ширину и высоту
     File = F;//имя файла+расширение
