@@ -211,62 +211,51 @@ void Phystech_Menu::processing_phystech_menu(RenderWindow& window)
     while (window.isOpen())
     {
         Event event;
-        while (window.pollEvent(event)) {
+        while (window.pollEvent(event))
+        {
 
             if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
                 exit_button_pressed(window);
 
             if (IntRect(FRKT_BUTTON_POS_X, FRKT_BUTTON_POS_Y,
-                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystechNum = FRKT;
+                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                frkt_pressed(window);
 
             if (IntRect(LFI_BUTTON_POS_X, LFI_BUTTON_POS_Y,
-                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystechNum = LFI;
+                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                lfi_pressed(window);
 
             if (IntRect(FAKI_BUTTON_POS_X, FAKI_BUTTON_POS_Y,
-                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystechNum = FAKI;
+                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                faki_pressed(window);
 
             if (IntRect(FEFM_BUTTON_POS_X, FEFM_BUTTON_POS_Y,
-                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystechNum = FEFM;
+                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                fefm_pressed(window);
 
             if (IntRect(FPMI_BUTTON_POS_X, FPMI_BUTTON_POS_Y,
-                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystechNum = FPMI;
+                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                fpmi_pressed(window);
 
             if (IntRect(FBMF_BUTTON_POS_X, FBMF_BUTTON_POS_Y,
-                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystechNum = FBMF;
+                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                fbmf_pressed(window);
 
             if (IntRect(INBICST_BUTTON_POS_X, INBICST_BUTTON_POS_Y,
-                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystechNum = INBICST;
+                        SCHOOL_INFO_BUTTON_WIDTH, SCHOOL_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                inbicst_pressed(window);
 
             if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
-                        EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-                phystechNum = EXIT;
-
-
-            if (Mouse::isButtonPressed(Mouse::Left)) {
-                if (phystechNum == FRKT)
-                    frkt_pressed(window);
-                else if (phystechNum == LFI)
-                    lfi_pressed(window);
-                else if (phystechNum == FAKI)
-                    faki_pressed(window);
-                else if (phystechNum == FEFM)
-                    fefm_pressed(window);
-                else if (phystechNum == FPMI)
-                    fpmi_pressed(window);
-                else if (phystechNum == FBMF)
-                    fbmf_pressed(window);
-                else if (phystechNum == INBICST)
-                    inbicst_pressed(window);
-                else if (phystechNum == EXIT)
-                    exit_button_pressed(window);
-            }
+                        EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                exit_button_pressed(window);
         }
     }
 }

@@ -15,11 +15,6 @@ using std::string;
 class Menu
 {
 private:
-    //----------------------------------------button`s number:
-    const static int START_INFO = 1;
-    const static int EXIT = 2;
-    const static int CHECKING_ODDS = 3;
-    //--------------------------------------------------------
 
     //---------------------------start info button parameters:
     const static int START_INFO_BUTTON_POS_X = 235;
@@ -65,8 +60,6 @@ protected:
     Image checking_odds_button;
     Texture checking_odds_texture;
     Sprite checking_odds_sprite;
-
-    int menuNum = 0;
 public:
 
     //---------------------------------------creating sprites for menu:
