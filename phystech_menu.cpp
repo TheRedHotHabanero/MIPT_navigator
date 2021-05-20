@@ -123,6 +123,8 @@ void Phystech_Menu::frkt_pressed(RenderWindow& window)
     Frkt frkt;
     frkt.welcome_school_page(frkt.trick_button_,
                              frkt.title_text_,
+                             frkt.text_,
+                             frkt.font_,
                              frkt.phystech_background_,
                              frkt.exit_button_,
                              frkt.counting_points_button_);
@@ -135,6 +137,8 @@ void Phystech_Menu::lfi_pressed(RenderWindow& window)
     Lfi lfi;
     lfi.welcome_school_page(lfi.trick_button_,
                             lfi.title_text_,
+                            lfi.text_,
+                            lfi.font_,
                             lfi.phystech_background_,
                             lfi.exit_button_,
                             lfi.counting_points_button_);
@@ -146,6 +150,8 @@ void Phystech_Menu::faki_pressed(RenderWindow& window)
     Faki faki;
     faki.welcome_school_page(faki.trick_button_,
                              faki.title_text_,
+                             faki.text_,
+                             faki.font_,
                              faki.phystech_background_,
                              faki.exit_button_,
                              faki.counting_points_button_);
@@ -157,6 +163,8 @@ void Phystech_Menu::fefm_pressed(RenderWindow& window)
     Fefm fefm;
     fefm.welcome_school_page(fefm.trick_button_,
                              fefm.title_text_,
+                             fefm.text_,
+                             fefm.font_,
                              fefm.phystech_background_,
                              fefm.exit_button_,
                              fefm.counting_points_button_);
@@ -168,6 +176,8 @@ void Phystech_Menu::fpmi_pressed(RenderWindow& window)
     Fpmi fpmi;
     fpmi.welcome_school_page(fpmi.trick_button_,
                              fpmi.title_text_,
+                             fpmi.text_,
+                             fpmi.font_,
                              fpmi.phystech_background_,
                              fpmi.exit_button_,
                              fpmi.counting_points_button_);
@@ -179,6 +189,8 @@ void Phystech_Menu::fbmf_pressed(RenderWindow& window)
     Fbmf fbmf;
     fbmf.welcome_school_page(fbmf.trick_button_,
                              fbmf.title_text_,
+                             fbmf.text_,
+                             fbmf.font_,
                              fbmf.phystech_background_,
                              fbmf.exit_button_,
                              fbmf.counting_points_button_);
@@ -191,6 +203,8 @@ void Phystech_Menu::inbicst_pressed(RenderWindow& window)
     Inbicst inbicst;
     inbicst.welcome_school_page(inbicst.trick_button_,
                                 inbicst.title_text_,
+                                inbicst.text_,
+                                inbicst.font_,
                                 inbicst.phystech_background_,
                                 inbicst.exit_button_,
                                 inbicst.counting_points_button_);

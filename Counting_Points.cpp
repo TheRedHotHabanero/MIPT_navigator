@@ -2,6 +2,7 @@
 // Created by user on 17.05.2021.
 //
 #include "Counting_Points.h"
+#include "phystech_menu.h"
 #include <fstream>
 #include <map>
 #include <iomanip>
@@ -121,11 +122,12 @@ void Check::create_check_button(const string &check_button_) {
 void Check::create_text(const string &text_, const string &font_) {
     font.loadFromFile(font_);
     int i = 0;
-    text.emplace_back(L"Физика", font, 30);
-    text.emplace_back(L"Математика", font, 30);
-    text.emplace_back(L"Русский язык", font, 30);
-    text.emplace_back(L"Химия", font, 30);
-    text.emplace_back(L"Биология", font, 30);
+    text.emplace_back(L"Физика", font, TEXT_CHARACTER_SIZE);
+    text.emplace_back(L"Математика", font, TEXT_CHARACTER_SIZE);
+    text.emplace_back(L"Русский язык", font, TEXT_CHARACTER_SIZE);
+    text.emplace_back(L"Информатика", font, TEXT_CHARACTER_SIZE);
+    text.emplace_back(L"Биология", font, TEXT_CHARACTER_SIZE);
+    text.emplace_back(L"Химия", font, TEXT_CHARACTER_SIZE);
     for (auto &it:text) {
         it.setFillColor(Color::Black);
         it.setPosition(TEXT_POS_X, TEXT_POS_Y + i * TEXT_DELTA_Y);
@@ -133,7 +135,11 @@ void Check::create_text(const string &text_, const string &font_) {
     }
 }
 
-void Check::exit_button_pressed(RenderWindow &window) { window.close(); }
+void Check::exit_button_pressed(RenderWindow &window) {
+    window.close();
+    Phystech_Menu phystech_menu;
+    phystech_menu.phystech_page();
+}
 
 void Check::check_button_pressed(RenderWindow &window, const string &Table_) {
     check_num = 0;
@@ -142,14 +148,13 @@ void Check::check_button_pressed(RenderWindow &window, const string &Table_) {
     exit_button_pressed(window);
 }
 
-void
-Check::main_window(const string &exit_button_, const string &check_button_,
-                   const string &text_, const string &font_,
-                   const string &phys_budget_, const string &chem_budget_,
-                   const string &inf_budget_, const string &bio_budget_,
-                   const string &phys_contract_, const string &chem_contract_,
-                   const string &inf_contract_, const string &bio_contract_,
-                   const string &Table_) {
+void Check::main_window(const string &exit_button_, const string &check_button_,
+                        const string &text_, const string &font_,
+                        const string &phys_budget_, const string &chem_budget_,
+                        const string &inf_budget_, const string &bio_budget_,
+                        const string &phys_contract_, const string &chem_contract_,
+                        const string &inf_contract_, const string &bio_contract_,
+                        const string &Table_) {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Checking points");
     create_exit_button(exit_button_);
     create_check_button(check_button_);
@@ -181,25 +186,24 @@ void Check::processing_keys(RenderWindow &window, const string &Table_) {
             biology.event_holder(event);
             chemistry.event_holder(event);
 
-        }
 
-        if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
-                    EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-            check_num = EXIT;
+            if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
+                        EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
+                check_num = EXIT;
 
-        if (IntRect(CHECK_BUTTON_POS_X, CHECK_BUTTON_POS_Y,
-                    CHECK_BUTTON_WIDTH, CHECK_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-            check_num = CHECK;
+            if (IntRect(CHECK_BUTTON_POS_X, CHECK_BUTTON_POS_Y,
+                        CHECK_BUTTON_WIDTH, CHECK_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
+                check_num = CHECK;
 
-        if (Mouse::isButtonPressed(Mouse::Left)) {
-            if (check_num == CHECK)
-                check_button_pressed(window, Table_);
-            else if (check_num == EXIT)
-                exit_button_pressed(window);
+            if (Mouse::isButtonPressed(Mouse::Left)) {
+                if (check_num == CHECK)
+                    check_button_pressed(window, Table_);
+                else if (check_num == EXIT)
+                    exit_button_pressed(window);
+            }
         }
         window.clear(Color::White);
 
-        //window.draw(phystech_school_background_sprite);
         window.draw(exit_button_sprite);
         window.draw(check_button_sprite);
         for (auto &it:text)

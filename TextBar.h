@@ -44,10 +44,10 @@ private:
 
     const static int TEXT_BAR_WIDTH = 242;
     const static int TEXT_BAR_HEIGHT = 68;
-    const static int TEXT_BAR_POS_X = 500;
-    const static int TEXT_BAR_POS_Y = 50;
+    const static int TEXT_BAR_POS_X = 860;
+    const static int TEXT_BAR_POS_Y = 80;
     const static int TEXT_BAR_MAX_SIZE = 3;
-    string TEXT_BAR_INIT = "";
+    string TEXT_BAR_INIT;
     string TEXTBAR_TEXTURE = "../images/text_field.png";
     string TEXTBAR_FONT = "../texts/Font.ttf";
 

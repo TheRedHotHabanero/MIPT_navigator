@@ -29,29 +29,28 @@ private:
     //--------------------------------------------------------
 
     //---------------------------------exit button parameters:
-    const static int CHECK_BUTTON_POS_X = 800;
-    const static int CHECK_BUTTON_POS_Y = 50;
-    const static int CHECK_BUTTON_WIDTH = 350;
-    const static int CHECK_BUTTON_HEIGHT = 188;
+    const static int CHECK_BUTTON_POS_X = 50;
+    const static int CHECK_BUTTON_POS_Y = 458;
+    const static int CHECK_BUTTON_WIDTH = 213;
+    const static int CHECK_BUTTON_HEIGHT = 167;
     //--------------------------------------------------------
 
     //------------------window (background picture) parameters:
-    const static int WINDOW_POSITION_X = 0;
-    const static int WINDOW_POSITION_Y = 0;
     const static int WINDOW_WIDTH = 1200;
     const static int WINDOW_HEIGHT = 675;
     //---------------------------------------------------------
 
     //-------------------------------------Text bar parameters:
-    const static int TEXT_BAR_POS_Y = 50;
-    const static int TEXT_BAR_DELTA_Y = 80;
+    const static int TEXT_BAR_POS_Y = 80;
+    const static int TEXT_BAR_DELTA_Y = 100;
     //--------------------------------------------------------
 
     //-------------------------------------Text parameters:
-    const static int TEXT_POS_X = 100;
-    const static int TEXT_POS_Y = 50;
-    const static int TEXT_DELTA_Y = 80;
+    const static int TEXT_POS_X = 500;
+    const static int TEXT_POS_Y = 75;
+    const static int TEXT_DELTA_Y = 100;
     const static int CELL_WIDTH = 11;
+    const int TEXT_CHARACTER_SIZE = 30;
     //--------------------------------------------------------
     int Yours_Points = 0;
     int check_num = 0;
@@ -122,7 +121,7 @@ public:
 
     string Table_ = "../table.csv";
     string exit_button_ = "../images/exit_button.png";
-    string check_button_;
+    string check_button_ = "../images/csv_button.png";
     string text_;
     string font_ = "../texts/Font.ttf";
     string phys_budget_ = "../Budget/phys_budget.txt";

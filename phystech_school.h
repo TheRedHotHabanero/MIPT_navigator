@@ -15,34 +15,8 @@ using namespace sf;
 using std::string;
 using std::ifstream;
 
-class Phystech_School{
+class Phystech_School {
 protected:
-    //----------------------------------------button`s number:
-    const static int TRICK = 1;
-    const static int EXIT = 2;
-    const static int COUNTING_POINTS = 3;
-    //--------------------------------------------------------
-
-    //--------------------------parameters for counting points:
-    int number_of_subjects = 3;         //number of subjects for summ of points, change if necessary
-    bool computer_science = false;     // if this subject is in summ for points, set it true.
-    bool math = true;
-    bool physics = false;
-    bool russian_language = true;
-    bool biology = false;
-    bool chemistry = false;
-    //-------------------------------------------------------
-
-    //-------------------------------------------------------
-    string title_text;
-    string phystech_background_;
-    string font_for_title;
-    string trick_button_;
-    string counting_points_button_;
-    string text_;
-    string exit_button_;
-    //-------------------------------------------------------
-
     //---------------------------------exit button parameters:
     const static int EXIT_BUTTON_POS_X = 1110;
     const static int EXIT_BUTTON_POS_Y = 600;
@@ -69,11 +43,8 @@ protected:
     int TRICK_BUTTON_HEIGHT;
     //---------------------------------------------------------
 
-    //----------------------------------------title parameters:
-    const static int TITLE_CHARACTER_SIZE = 30;
+    //------------------------------------------text parameters:
     const static int TEXT_CHARACTER_SIZE = 18;
-    const static int TITLE_POS_X = 500;
-    const static int TITLE_POS_Y = 20;
     const static int BORING_TEXT_POS_X = 200;
     const static int BORING_TEXT_POS_Y = 200;
     Font font;
@@ -98,7 +69,6 @@ protected:
     Texture phystech_school_background_texture;
     Sprite phystech_school_background_sprite;
     //---------------------------------------------------------
-    int phystech_school_menu_num = 0;
 
     Check Chek_Points;
 
@@ -106,23 +76,29 @@ public:
 
     //------------------------------------------------------creating bottons and background:
     void create_exit_button(string &exit_button_);
+
     void create_phystech_school_background(string &phystech_school_background_);
+
     virtual Sprite create_counting_points_button() = 0;
+
     virtual Sprite create_trick_button() = 0;
-    void create_text_title(string &title_text_, string text_){};
+
     void show_school_information(string &font_, string &text_);
-    void create_text_title(string &text_);
     //-------------------------------------------------------------------------------------
 
     void welcome_school_page(string &trick_button_,
                              string &title_text_,
+                             string &text_,
+                             string &font_,
                              string &phystech_background_,
                              string &exit_button_,
                              string &counting_points_button_);
 
     //---------------------------------------------------------pressed keys:
     virtual void trick_button_pressed() = 0;
+
     static void exit_button_pressed(RenderWindow &window);
+
     void counting_points_pressed(RenderWindow &window);
     //---------------------------------------------------------------------
 

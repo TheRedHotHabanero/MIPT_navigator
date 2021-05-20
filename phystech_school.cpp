@@ -22,19 +22,9 @@ void Phystech_School::create_phystech_school_background(string &phystech_school_
 }
 
 
-void Phystech_School::create_text_title(string &text_)
-{
-    title.setString(text_);
-    title.setFont(font);
-    title.setCharacterSize(TITLE_CHARACTER_SIZE);
-    //title.setColor(Color::Black);
-    title.setPosition(TITLE_POS_X, TITLE_POS_Y);
-}
-
 void Phystech_School::show_school_information(string &font_, string &text_)
 {
     font.loadFromFile(font_);
-    create_text_title(text_);
     //--------------------------------------reading text from file
     string text;
     ifstream reception;
@@ -51,22 +41,25 @@ void Phystech_School::show_school_information(string &font_, string &text_)
 
 void Phystech_School::welcome_school_page(string &trick_button_,
                                           string &title_text_,
+                                          string &text_,
+                                          string &font_,
                                           string &phystech_background_,
                                           string &exit_button_,
                                           string &counting_points_button_)
 {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT),
-                        text_);
+                        String::fromUtf8(title_text_.begin(), title_text_.end()));
 
     create_phystech_school_background(phystech_background_);
     create_exit_button(exit_button_);
-    create_text_title(text_);
+    show_school_information(font_, text_);
 
     window.draw(phystech_school_background_sprite);
     window.draw(exit_button_sprite);
     window.draw(create_trick_button());
     window.draw(create_counting_points_button());
     window.draw(title);
+    window.draw(boring_text);
 
     window.display();
     processing_keys(window);
@@ -89,5 +82,6 @@ void Phystech_School::counting_points_pressed(RenderWindow &window)
                             Chek_Points.phys_contract_, Chek_Points.chem_contract_,
                             Chek_Points.inf_contract_, Chek_Points.bio_contract_,
                             Chek_Points.Table_);
+
 }
 

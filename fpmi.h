@@ -49,9 +49,9 @@ public:
     //--------------------------------------------------------
 
     //---------------------------------------------------------page params:
-    string title_text_;
-    string font_for_title_;
-    string text_;
+    string title_text_ = "Физтех-школа прикладной математики и информатики";
+    string font_ = "../texts/Font.ttf";
+    string text_ = "../texts/fpmi.txt";
     string trick_button_ = "../images/tricks/fpmi_trick.png";
     string counting_points_button_ = "../images/counting_points_button.png";
     string phystech_background_ = "../images/school_backs/fpmi_back.jpg";
