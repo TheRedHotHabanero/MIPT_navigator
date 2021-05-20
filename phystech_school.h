@@ -44,9 +44,9 @@ protected:
     //---------------------------------------------------------
 
     //------------------------------------------text parameters:
-    const static int TEXT_CHARACTER_SIZE = 18;
-    const static int BORING_TEXT_POS_X = 200;
-    const static int BORING_TEXT_POS_Y = 200;
+    const static int TEXT_CHARACTER_SIZE = 20;
+    const static int BORING_TEXT_POS_X = 36;
+    const static int BORING_TEXT_POS_Y = 130;
     Font font;
     Text title;
     Text boring_text;
