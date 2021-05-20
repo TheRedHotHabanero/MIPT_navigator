@@ -36,18 +36,23 @@ private:
     //--------------------------------------------------------
 
     //------------------window (background picture) parameters:
+    const static int WINDOW_POSITION_X = 0;
+    const static int WINDOW_POSITION_Y = 0;
     const static int WINDOW_WIDTH = 1200;
     const static int WINDOW_HEIGHT = 675;
     //---------------------------------------------------------
 
     //-------------------------------------Text bar parameters:
     const static int TEXT_BAR_POS_Y = 80;
+    const static int TEXT_BAR_POS_X = 250;
     const static int TEXT_BAR_DELTA_Y = 100;
     //--------------------------------------------------------
 
     //-------------------------------------Text parameters:
     const static int TEXT_POS_X = 500;
     const static int TEXT_POS_Y = 75;
+    const static int ADD_TEXT_POS_X = 80;
+    const static int ADD_TEXT_POS_Y = 130;
     const static int TEXT_DELTA_Y = 100;
     const static int CELL_WIDTH = 11;
     const int TEXT_CHARACTER_SIZE = 30;
@@ -59,6 +64,10 @@ private:
     Texture exit_button_texture;
     Sprite exit_button_sprite;
 
+    Image background;
+    Texture background_texture;
+    Sprite background_sprite;
+
 
     TextBar physics;
     TextBar math;
@@ -66,11 +75,13 @@ private:
     TextBar informatics;
     TextBar biology;
     TextBar chemistry;
+    TextBar additional_points;
 
     Image check_button;
     Texture check_button_texture;
     Sprite check_button_sprite;
 
+    Text add_text;
     vector<Text> text;
     Font font;
 
@@ -85,7 +96,7 @@ private:
 
 public:
     void main_window(const string &exit_button_, const string &check_button_,
-                     const string &text_, const string &font_,
+                     const string &font_, const string& background_,
                      const string &phys_budget_, const string &chem_budget_,
                      const string &inf_budget_, const string &bio_budget_,
                      const string &phys_contract_, const string &chem_contract_,
@@ -103,7 +114,9 @@ public:
 
     void create_textbox();
 
-    void create_text(const string &text_, const string &font_);
+    void create_background(const string &background_);
+
+    void create_text(const string &font_);
 
     void reading_from_file(const string &points_, multimap<int, string> &storage);
 
@@ -122,16 +135,18 @@ public:
     string Table_ = "../table.csv";
     string exit_button_ = "../images/exit_button.png";
     string check_button_ = "../images/csv_button.png";
-    string text_;
     string font_ = "../texts/Font.ttf";
+
     string phys_budget_ = "../Budget/phys_budget.txt";
     string chem_budget_ = "../Budget/chem_budget.txt";
     string inf_budget_ = "../Budget/inf_budget.txt";
     string bio_budget_ = "../Budget/bio_budget.txt";
+
     string phys_contract_ = "../Contract/phys_contract.txt";
     string chem_contract_ = "../Contract/chem_contract.txt";
     string inf_contract_ = "../Contract/inf_contract.txt";
     string bio_contract_ = "../Contract/bio_contract.txt";
+    string background_ = "../images/phystech_background.jpg";
 };
 
 #define NEW_CLASS_H

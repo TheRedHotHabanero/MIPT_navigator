@@ -18,27 +18,43 @@ using std::setw;
 void Check::entering_points() {
     Yours_Points = atoi(physics.returnText().c_str()) + atoi(math.returnText().c_str()) +
                    atoi(russian.returnText().c_str()) + atoi(biology.returnText().c_str()) +
-                   atoi(chemistry.returnText().c_str());
-    if (atoi(physics.returnText().c_str()) < 0 || atoi(math.returnText().c_str()) < 0 ||
-        atoi(russian.returnText().c_str()) < 0 || atoi(biology.returnText().c_str()) < 0 ||
-        atoi(chemistry.returnText().c_str()) < 0)
-        cout << "------ ОШИБКА: Введите положительные баллы. ------" << endl;
+                   atoi(chemistry.returnText().c_str()) + atoi(informatics.returnText().c_str()) +
+                   atoi(additional_points.returnText().c_str());
+    if (atoi(physics.returnText().c_str()) < 0 || atoi(physics.returnText().c_str()) > 100 ||
+        atoi(math.returnText().c_str()) < 0 || atoi(math.returnText().c_str()) > 100 ||
+        atoi(russian.returnText().c_str()) < 0 || atoi(russian.returnText().c_str()) > 100 ||
+        atoi(biology.returnText().c_str()) < 0 || atoi(biology.returnText().c_str()) > 100 ||
+        atoi(chemistry.returnText().c_str()) < 0 || atoi(chemistry.returnText().c_str()) > 100 ||
+        atoi(informatics.returnText().c_str()) < 0 || atoi(informatics.returnText().c_str()) > 100)
+        cout << "------- ОШИБКА: Введите баллы в диапазоне от 0 до 100. -------" << endl;
+    else if (atoi(additional_points.returnText().c_str()) < 0 || atoi(additional_points.returnText().c_str()) > 10)
+        cout << "------- ОШИБКА: Введите дополнительные баллы в диапазоне от 0 до 10. -------" << endl;
     else if (Yours_Points == 0)
-        cout << "------ ОШИБКА: Введите баллы. ------" << endl;
-    else if (math.returnText().empty())
-        cout << "------ ОШИБКА: Введите баллы по математике. ------" << endl;
+        cout << "------- ОШИБКА: Введите баллы. -------" << endl;
     else if (russian.returnText().empty())
-        cout << "------ ОШИБКА: Введите баллы по руссоку языку. ------" << endl;
-
+        cout << "------- ОШИБКА: Введите баллы по руссоку языку. -------" << endl;
+    else if (math.returnText().empty())
+        cout << "------- ОШИБКА: Введите баллы по математике. -------" << endl;
+    else
+        cout << "------- Ваши суммарные баллы: " << Yours_Points << " -------" << endl;
 
 }
 
 void Check::create_textbox() {
     math.set_pos_y(TEXT_BAR_POS_Y + TEXT_BAR_DELTA_Y);
-    russian.set_pos_y(TEXT_BAR_POS_Y + 2 * TEXT_BAR_DELTA_Y);
+    physics.set_pos_y(TEXT_BAR_POS_Y + 2 * TEXT_BAR_DELTA_Y);
     informatics.set_pos_y(TEXT_BAR_POS_Y + 3 * TEXT_BAR_DELTA_Y);
     biology.set_pos_y(TEXT_BAR_POS_Y + 4 * TEXT_BAR_DELTA_Y);
     chemistry.set_pos_y(TEXT_BAR_POS_Y + 5 * TEXT_BAR_DELTA_Y);
+    additional_points.set_pos_y(TEXT_BAR_POS_Y);
+    additional_points.set_pos_x(TEXT_BAR_POS_X);
+}
+
+void Check::create_background(const string &background_) {
+    background.loadFromFile(background_);
+    background_texture.loadFromImage(background);
+    background_sprite.setTexture(background_texture);
+    background_sprite.setPosition(WINDOW_POSITION_X, WINDOW_POSITION_Y);
 }
 
 void Check::reading_from_file(const string &points_, multimap<int, string> &storage) {
@@ -79,11 +95,10 @@ void Check::snap(const string &Table_) {
         output(Table, physics_budget, physics_contract);
     if (!informatics.returnText().empty())
         output(Table, informatics_budget, informatics_contract);
-    if (!chemistry.returnText().empty())
-        output(Table, chemistry_budget, chemistry_contract);
     if (!biology.returnText().empty())
         output(Table, biology_budget, biology_contract);
-
+    if (!chemistry.returnText().empty())
+        output(Table, chemistry_budget, chemistry_contract);
 }
 
 void Check::output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_) const {
@@ -119,12 +134,12 @@ void Check::create_check_button(const string &check_button_) {
 
 }
 
-void Check::create_text(const string &text_, const string &font_) {
+void Check::create_text(const string &font_) {
     font.loadFromFile(font_);
     int i = 0;
-    text.emplace_back(L"Физика", font, TEXT_CHARACTER_SIZE);
-    text.emplace_back(L"Математика", font, TEXT_CHARACTER_SIZE);
     text.emplace_back(L"Русский язык", font, TEXT_CHARACTER_SIZE);
+    text.emplace_back(L"Математика", font, TEXT_CHARACTER_SIZE);
+    text.emplace_back(L"Физика", font, TEXT_CHARACTER_SIZE);
     text.emplace_back(L"Информатика", font, TEXT_CHARACTER_SIZE);
     text.emplace_back(L"Биология", font, TEXT_CHARACTER_SIZE);
     text.emplace_back(L"Химия", font, TEXT_CHARACTER_SIZE);
@@ -133,6 +148,11 @@ void Check::create_text(const string &text_, const string &font_) {
         it.setPosition(TEXT_POS_X, TEXT_POS_Y + i * TEXT_DELTA_Y);
         i++;
     }
+    add_text.setString(L"Дополнительные баллы");
+    add_text.setFont(font);
+    add_text.setFillColor(Color::Black);
+    add_text.setCharacterSize(TEXT_CHARACTER_SIZE);
+    add_text.setPosition(ADD_TEXT_POS_X, ADD_TEXT_POS_Y);
 }
 
 void Check::exit_button_pressed(RenderWindow &window) {
@@ -149,7 +169,7 @@ void Check::check_button_pressed(RenderWindow &window, const string &Table_) {
 }
 
 void Check::main_window(const string &exit_button_, const string &check_button_,
-                        const string &text_, const string &font_,
+                        const string &font_, const string &background_,
                         const string &phys_budget_, const string &chem_budget_,
                         const string &inf_budget_, const string &bio_budget_,
                         const string &phys_contract_, const string &chem_contract_,
@@ -159,7 +179,8 @@ void Check::main_window(const string &exit_button_, const string &check_button_,
     create_exit_button(exit_button_);
     create_check_button(check_button_);
     create_textbox();
-    create_text(text_, font_);
+    create_text(font_);
+    create_background(background_);
     filling_storage(phys_budget_, chem_budget_,
                     inf_budget_, bio_budget_,
                     phys_contract_, chem_contract_,
@@ -185,6 +206,7 @@ void Check::processing_keys(RenderWindow &window, const string &Table_) {
             informatics.event_holder(event);
             biology.event_holder(event);
             chemistry.event_holder(event);
+            additional_points.event_holder(event);
 
 
             if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
@@ -202,10 +224,13 @@ void Check::processing_keys(RenderWindow &window, const string &Table_) {
                     exit_button_pressed(window);
             }
         }
-        window.clear(Color::White);
+        window.clear();
 
+        window.draw(background_sprite);
         window.draw(exit_button_sprite);
         window.draw(check_button_sprite);
+        window.draw(add_text);
+
         for (auto &it:text)
             window.draw(it);
         physics.displayBox(window);
@@ -214,6 +239,7 @@ void Check::processing_keys(RenderWindow &window, const string &Table_) {
         informatics.displayBox(window);
         biology.displayBox(window);
         chemistry.displayBox(window);
+        additional_points.displayBox(window);
 
         window.display();
     }

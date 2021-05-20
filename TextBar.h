@@ -64,6 +64,8 @@ public:
 
     void set_pos_y(int y_);
 
+    void set_pos_x(int x_);
+
     void setPassive();
 
     int getTextLength() const;

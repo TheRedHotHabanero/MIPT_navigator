@@ -54,7 +54,6 @@ public:
     string exit_button_ = "../images/exit_button.png";
     //--------------------------------------------------------------------
     void trick_button_pressed() override;
-    //void counting_points_pressed(RenderWindow& window);
     //---------------------------------------------------------------------
     void processing_keys(RenderWindow& window) override;
     Sprite create_counting_points_button() override;

@@ -59,6 +59,17 @@ void TextBar::set_pos_y(int y_) {
 
 }
 
+void TextBar::set_pos_x(int x_) {
+    this->Shape.x = x_;
+    int center_x = int((this->Shape.length) / 2);
+    this->Shape.left_corner_x = Shape.x - center_x;
+    this->Shape.mouse_x_min = this->Shape.left_corner_x;
+    this->Shape.mouse_x_max = this->Shape.left_corner_x + this->Shape.length;
+    box.setOrigin((float) (Shape.x - Shape.left_corner_x), (float) (Shape.y - Shape.left_corner_y));
+    box.setPosition((float) Shape.x, (float) Shape.y);
+    txt.setPosition((float) Shape.left_corner_x, (float) Shape.left_corner_y);
+}
+
 void TextBar::event_holder(sf::Event &event) {
     if (event.type == sf::Event::MouseButtonPressed) {
         if (event.mouseButton.button == sf::Mouse::Left) {
