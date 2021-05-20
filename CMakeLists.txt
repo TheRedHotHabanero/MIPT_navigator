@@ -39,8 +39,8 @@ add_executable(MIPT_navigator
         inbicst.cpp
         lfi.h
         lfi.cpp
-        Class.h
-        Class.cpp
+        Counting_Points.h
+        Counting_Points.cpp
         TextBar.h
         TextBar.cpp)
 

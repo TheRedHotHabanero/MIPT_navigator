@@ -38,7 +38,7 @@ void Phystech_School::show_school_information(string &font_, string &text_)
     //--------------------------------------reading text from file
     string text;
     ifstream reception;
-    reception.open("../input.txt");
+    reception.open(text_);
     getline(reception, text, '\0');
     reception.close();
     //----------------------------------------creating boring text
@@ -79,5 +79,13 @@ void Phystech_School::exit_button_pressed(RenderWindow &window)
     menu.phystech_page();
 }
 
-void Phystech_School::counting_points_pressed(RenderWindow &window){}
+void Phystech_School::counting_points_pressed(RenderWindow &window){
+    Chek_Points.main_window(Chek_Points.exit_button_, Chek_Points.check_button_,
+                            Chek_Points.text_, Chek_Points.font_,
+                            Chek_Points.phys_budget_,Chek_Points.chem_budget_,
+                            Chek_Points.inf_budget_,Chek_Points.bio_budget_,
+                            Chek_Points.phys_contract_, Chek_Points.chem_contract_,
+                            Chek_Points.inf_contract_, Chek_Points.bio_contract_,
+                            Chek_Points.Table_);
+}
 

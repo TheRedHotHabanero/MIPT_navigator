@@ -48,8 +48,8 @@ private:
     const static int TEXT_BAR_POS_Y = 50;
     const static int TEXT_BAR_MAX_SIZE = 3;
     string TEXT_BAR_INIT = "";
-    string TEXTBAR_TEXTURE = "text_field.png";
-    string TEXTBAR_FONT = "CRT.ttf";
+    string TEXTBAR_TEXTURE = "../images/text_field.png";
+    string TEXTBAR_FONT = "../texts/Font.ttf";
 
 public:
 

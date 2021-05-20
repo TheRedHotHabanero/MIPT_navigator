@@ -9,6 +9,7 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "Counting_Points.h"
 
 using namespace sf;
 using std::string;
@@ -98,6 +99,8 @@ protected:
     Sprite phystech_school_background_sprite;
     //---------------------------------------------------------
     int phystech_school_menu_num = 0;
+
+    Check Chek_Points;
 
 public:
 

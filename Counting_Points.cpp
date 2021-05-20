@@ -1,7 +1,7 @@
 //
 // Created by user on 17.05.2021.
 //
-#include "Class.h"
+#include "Counting_Points.h"
 #include <fstream>
 #include <map>
 #include <iomanip>
@@ -14,26 +14,21 @@ using std::ofstream;
 using std::pair;
 using std::setw;
 
-void Check::entering_points1() {
-    int a;
-    cin >> a;
-    Yours_Points = a;
-}
-
 void Check::entering_points() {
     Yours_Points = atoi(physics.returnText().c_str()) + atoi(math.returnText().c_str()) +
                    atoi(russian.returnText().c_str()) + atoi(biology.returnText().c_str()) +
                    atoi(chemistry.returnText().c_str());
-    if (Yours_Points == 0)
-        cout << "------ ОШИБКА: Введите баллы. ------" << endl;
-    if (math.returnText().empty())
-        cout << "------ ОШИБКА: Введите баллы по математике. ------" << endl;
-    if (russian.returnText().empty())
-        cout << "------ ОШИБКА: Введите баллы по руссоку языку. ------" << endl;
     if (atoi(physics.returnText().c_str()) < 0 || atoi(math.returnText().c_str()) < 0 ||
         atoi(russian.returnText().c_str()) < 0 || atoi(biology.returnText().c_str()) < 0 ||
         atoi(chemistry.returnText().c_str()) < 0)
         cout << "------ ОШИБКА: Введите положительные баллы. ------" << endl;
+    else if (Yours_Points == 0)
+        cout << "------ ОШИБКА: Введите баллы. ------" << endl;
+    else if (math.returnText().empty())
+        cout << "------ ОШИБКА: Введите баллы по математике. ------" << endl;
+    else if (russian.returnText().empty())
+        cout << "------ ОШИБКА: Введите баллы по руссоку языку. ------" << endl;
+
 
 }
 
@@ -74,11 +69,11 @@ void Check::filling_storage(const string &phys_budget_, const string &chem_budge
     reading_from_file(phys_contract_, physics_contract);
     reading_from_file(inf_contract_, informatics_contract);
     reading_from_file(chem_contract_, chemistry_contract);
-    reading_from_file(bio_contract_, biology_contrat);
+    reading_from_file(bio_contract_, biology_contract);
 }
 
-void Check::snap() {
-    ofstream Table("table.csv");
+void Check::snap(const string &Table_) {
+    ofstream Table(Table_);
     if (!physics.returnText().empty())
         output(Table, physics_budget, physics_contract);
     if (!informatics.returnText().empty())
@@ -86,11 +81,11 @@ void Check::snap() {
     if (!chemistry.returnText().empty())
         output(Table, chemistry_budget, chemistry_contract);
     if (!biology.returnText().empty())
-        output(Table, biology_budget, biology_contrat);
+        output(Table, biology_budget, biology_contract);
 
 }
 
-void Check::output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_) {
+void Check::output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_) const {
     Table_ << setw(2 * CELL_WIDTH) << "Бюджет:" << "," << " " << endl;
     for (auto &it:budget_) {
         if (it.first <= Yours_Points)
@@ -140,20 +135,21 @@ void Check::create_text(const string &text_, const string &font_) {
 
 void Check::exit_button_pressed(RenderWindow &window) { window.close(); }
 
-void Check::check_button_pressed(RenderWindow &window) {
+void Check::check_button_pressed(RenderWindow &window, const string &Table_) {
     check_num = 0;
     entering_points();
-    snap();
-    //exit_button_pressed(window);
+    snap(Table_);
+    exit_button_pressed(window);
 }
 
 void
-Check::main_window(const string &exit_button_, const string &check_button_, const string &text_,
-                   const string &font_,
+Check::main_window(const string &exit_button_, const string &check_button_,
+                   const string &text_, const string &font_,
                    const string &phys_budget_, const string &chem_budget_,
                    const string &inf_budget_, const string &bio_budget_,
                    const string &phys_contract_, const string &chem_contract_,
-                   const string &inf_contract_, const string &bio_contract_) {
+                   const string &inf_contract_, const string &bio_contract_,
+                   const string &Table_) {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "Checking points");
     create_exit_button(exit_button_);
     create_check_button(check_button_);
@@ -164,12 +160,12 @@ Check::main_window(const string &exit_button_, const string &check_button_, cons
                     phys_contract_, chem_contract_,
                     inf_contract_, bio_contract_);
 
-    processing_keys(window);
+    processing_keys(window, Table_);
 
 }
 
 
-void Check::processing_keys(RenderWindow &window) {
+void Check::processing_keys(RenderWindow &window, const string &Table_) {
     while (window.isOpen()) {
         Event event;
 
@@ -197,7 +193,7 @@ void Check::processing_keys(RenderWindow &window) {
 
         if (Mouse::isButtonPressed(Mouse::Left)) {
             if (check_num == CHECK)
-                check_button_pressed(window);
+                check_button_pressed(window, Table_);
             else if (check_num == EXIT)
                 exit_button_pressed(window);
         }
