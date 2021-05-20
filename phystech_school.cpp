@@ -79,7 +79,9 @@ void Phystech_School::exit_button_pressed(RenderWindow &window)
     menu.phystech_page();
 }
 
-void Phystech_School::counting_points_pressed(RenderWindow &window){
+void Phystech_School::counting_points_pressed(RenderWindow &window)
+{
+    window.close();
     Chek_Points.main_window(Chek_Points.exit_button_, Chek_Points.check_button_,
                             Chek_Points.text_, Chek_Points.font_,
                             Chek_Points.phys_budget_,Chek_Points.chem_budget_,
