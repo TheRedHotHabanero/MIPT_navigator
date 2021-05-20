@@ -38,6 +38,10 @@ add_executable(MIPT_navigator
         inbicst.h
         inbicst.cpp
         lfi.h
-        lfi.cpp)
+        lfi.cpp
+        Class.h
+        Class.cpp
+        TextBar.h
+        TextBar.cpp)
 
 target_link_libraries(MIPT_navigator sfml-graphics sfml-audio)
