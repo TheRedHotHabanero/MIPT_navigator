@@ -16,10 +16,13 @@ using std::pair;
 using std::setw;
 
 void Check::entering_points() {
-    Yours_Points = atoi(physics.returnText().c_str()) + atoi(math.returnText().c_str()) +
-                   atoi(russian.returnText().c_str()) + atoi(biology.returnText().c_str()) +
-                   atoi(chemistry.returnText().c_str()) + atoi(informatics.returnText().c_str()) +
-                   atoi(additional_points.returnText().c_str());
+    int Basic_Points = atoi(math.returnText().c_str()) + atoi(russian.returnText().c_str()) +
+                       atoi(additional_points.returnText().c_str());;
+    Phys_Points = Basic_Points + atoi(physics.returnText().c_str());
+    Inf_Points = Basic_Points + atoi(informatics.returnText().c_str());
+    Bio_Points = Basic_Points + atoi(biology.returnText().c_str());
+    Chem_Points = Basic_Points + atoi(chemistry.returnText().c_str());
+
     if (atoi(physics.returnText().c_str()) < 0 || atoi(physics.returnText().c_str()) > 100 ||
         atoi(math.returnText().c_str()) < 0 || atoi(math.returnText().c_str()) > 100 ||
         atoi(russian.returnText().c_str()) < 0 || atoi(russian.returnText().c_str()) > 100 ||
@@ -29,15 +32,15 @@ void Check::entering_points() {
         cout << "------- ОШИБКА: Введите баллы в диапазоне от 0 до 100. -------" << endl;
     else if (atoi(additional_points.returnText().c_str()) < 0 || atoi(additional_points.returnText().c_str()) > 10)
         cout << "------- ОШИБКА: Введите дополнительные баллы в диапазоне от 0 до 10. -------" << endl;
-    else if (Yours_Points == 0)
+    else if (Phys_Points + Inf_Points + Bio_Points + Chem_Points == 0)
         cout << "------- ОШИБКА: Введите баллы. -------" << endl;
     else if (russian.returnText().empty())
         cout << "------- ОШИБКА: Введите баллы по руссоку языку. -------" << endl;
     else if (math.returnText().empty())
         cout << "------- ОШИБКА: Введите баллы по математике. -------" << endl;
     else
-        cout << "------- Ваши суммарные баллы: " << Yours_Points << " -------" << endl;
-
+        cout << "------- Ваши суммарные баллы: " << Phys_Points + Inf_Points + Bio_Points + Chem_Points
+             << " -------" << endl;
 }
 
 void Check::create_textbox() {
@@ -92,26 +95,26 @@ void Check::filling_storage(const string &phys_budget_, const string &chem_budge
 void Check::snap(const string &Table_) {
     ofstream Table(Table_);
     if (!physics.returnText().empty())
-        output(Table, physics_budget, physics_contract);
+        output(Table, physics_budget, physics_contract, Phys_Points);
     if (!informatics.returnText().empty())
-        output(Table, informatics_budget, informatics_contract);
+        output(Table, informatics_budget, informatics_contract, Inf_Points);
     if (!biology.returnText().empty())
-        output(Table, biology_budget, biology_contract);
+        output(Table, biology_budget, biology_contract, Bio_Points);
     if (!chemistry.returnText().empty())
-        output(Table, chemistry_budget, chemistry_contract);
+        output(Table, chemistry_budget, chemistry_contract, Chem_Points);
 }
 
-void Check::output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_) const {
+void Check::output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_, const int& Points_) const {
     Table_ << setw(2 * CELL_WIDTH) << "Бюджет:" << "," << " " << endl;
     for (auto &it:budget_) {
-        if (it.first <= Yours_Points)
+        if (it.first <= Points_)
             Table_ << setw(CELL_WIDTH) << it.second << ","
                    << setw(CELL_WIDTH) << it.first << endl;
     }
 
     Table_ << setw(2 * CELL_WIDTH) << "Контракт:" << "," << " " << endl;
     for (auto &it:contract_) {
-        if (it.first <= Yours_Points)
+        if (it.first <= Points_)
             Table_ << setw(CELL_WIDTH) << it.second << ","
                    << setw(CELL_WIDTH) << it.first << endl;
     }

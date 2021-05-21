@@ -57,7 +57,11 @@ private:
     const static int CELL_WIDTH = 11;
     const int TEXT_CHARACTER_SIZE = 30;
     //--------------------------------------------------------
-    int Yours_Points = 0;
+    int Phys_Points = 0;
+    int Inf_Points = 0;
+    int Bio_Points = 0;
+    int Chem_Points = 0;
+
     int check_num = 0;
 
     Image exit_button;
@@ -124,7 +128,7 @@ public:
 
     void snap(const string &Table_);
 
-    void output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_) const;
+    void output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_, const int& Points_) const;
 
     void exit_button_pressed(RenderWindow &window);
 
