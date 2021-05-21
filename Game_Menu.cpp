@@ -166,11 +166,7 @@ void Game_Menu::run_math(RenderWindow& window)
 //------------------------------------------------------------------------
   
 
-       if (student.control(time, map, CurrentFrame, fuckers) == SUCCESS)
-
-           break; 
-
-
+        student.control(time, map, CurrentFrame, fuckers);
         Podlipskiy.control(time, map);
         Umnov_Jr.control(time, map);
         Exam.update(student.getScore());
@@ -202,12 +198,14 @@ void Game_Menu::run_phys(RenderWindow& window)
     Map map("phys_map.png");
 
     //String F, float X, float Y, float A, float B, float W, float H)
-    Player student("student.png", 100, 100, 100, 0, 41, 57);
+    Player student("student.png", 55, 530, 100, 0, 41, 57);
     Fucker Bulygin("Bulygin.jpg", 200, 200, 0, 0, 55, 55);
     Fucker Kuznetsov("Kuznetsov.jpg", 300, 300, 0, 0, 55, 55);
     ExamBar Exam;
 
-    std::vector<Fucker> fuckers{ Bulygin, Kuznetsov };
+    std::vector<Fucker> fuckers;
+    fuckers.push_back(Bulygin);
+    fuckers.push_back(Kuznetsov);
 
     float CurrentFrame = 0;
     Clock clock;
@@ -278,9 +276,7 @@ void Game_Menu::run_phys(RenderWindow& window)
 
 
 
-        if (student.control(time, map, CurrentFrame, fuckers) == SUCCESS)
-            break;
-
+        student.control(time, map, CurrentFrame, fuckers);
         Bulygin.control(time, map);
         Kuznetsov.control(time, map);
         Exam.update(student.getScore());
@@ -303,14 +299,14 @@ void Game_Menu::run_phys(RenderWindow& window)
 
 }
 
-//---------processing bottons (����� ������: ��� ������ ������ ������ ��� �������)
+//---------processing buttons
 
 
 //OK
 void Game_Menu::game_welcome_page(const string& game_menu_background_,
     const string& game_exit_button_,
     const string& math_department_button_,
-    const string& physics_department_button_)//�������� �����, ��������� �����
+    const string& physics_department_button_)
 {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT), "EXAM SIMULATOR");
 
@@ -336,8 +332,6 @@ void Game_Menu::math_department_button_pressed(RenderWindow& window)
     RenderWindow new_window(VideoMode(GAME_WINDOW_WIDTH, GAME_WINDOW_HEIGHT), "MATH");
     window.close();
     run_math(new_window);
-
-    show_win_window(new_window);
 
     return;
 }
