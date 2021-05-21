@@ -42,30 +42,32 @@ void Game_Menu::create_game_exit_button(const string& game_exit_button_)
 
 //-----------------------game end windows
 
-void Game_Menu::create_lose_window(const string& lose_window_)
+Sprite Game_Menu::create_lose_window(const string& lose_window_)
 {
  
     lose_window.loadFromFile(lose_window_);
     lose_window_texture.loadFromImage(lose_window);
     lose_window_sprite.setTexture(lose_window_texture);
     lose_window_sprite.setPosition(0, 0);
+    return lose_window_sprite;
 
 }
-void Game_Menu::create_win_window(const string& win_window_)
+Sprite Game_Menu::create_win_window(const string& win_window_)
 {
   
     win_window.loadFromFile(win_window_);
     win_window_texture.loadFromImage(win_window);
     win_window_sprite.setTexture(win_window_texture);
     win_window_sprite.setPosition(0, 0);
+
+    return win_window_sprite;
 }
 
 void Game_Menu::show_win_window(RenderWindow& window)
 {
     RenderWindow new_window(VideoMode(FINISH_WINDOW_WIDTH, FINISH_WINDOW_HEIGHT), "UR THE CHAMPION");
-    create_win_window("game_images/win.png");
     new_window.clear();
-    new_window.draw(win_window_sprite);
+    new_window.draw(create_win_window("../game_images/win.png"));
     new_window.display();
 
 }
@@ -73,10 +75,8 @@ void Game_Menu::show_win_window(RenderWindow& window)
 void Game_Menu::show_lose_window(RenderWindow& window)
 {
     RenderWindow new_window(VideoMode(FINISH_WINDOW_WIDTH, FINISH_WINDOW_HEIGHT), "WASTED");
-    create_lose_window("game_images/lose.png");
-
     new_window.clear();
-    new_window.draw(lose_window_sprite);
+    new_window.draw(create_lose_window("../game_images/lose.png"));
     new_window.display();
 
 }
@@ -108,7 +108,8 @@ void Game_Menu::run_math(RenderWindow& window)
     Podlipskiy.set_direction(DOWN);
     Umnov_Jr.set_direction(UP);
 
-    while (window.isOpen())
+    bool game_alive = true;
+    while (window.isOpen() & game_alive == true)
     {
         counter++;
         float time = clock.getElapsedTime().asMicroseconds();
@@ -164,9 +165,8 @@ void Game_Menu::run_math(RenderWindow& window)
             }
  
 //------------------------------------------------------------------------
-  
 
-        student.control(time, map, CurrentFrame, fuckers);
+        student.control(time, map, CurrentFrame, fuckers, window);
         Podlipskiy.control(time, map);
         Umnov_Jr.control(time, map);
         Exam.update(student.getScore());
@@ -185,10 +185,7 @@ void Game_Menu::run_math(RenderWindow& window)
 
 
         window.display();
-        
-        
     }
-
  }
 
 
@@ -276,7 +273,7 @@ void Game_Menu::run_phys(RenderWindow& window)
 
 
 
-        student.control(time, map, CurrentFrame, fuckers);
+        student.control(time, map, CurrentFrame, fuckers, window);
         Bulygin.control(time, map);
         Kuznetsov.control(time, map);
         Exam.update(student.getScore());

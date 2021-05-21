@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "Game_Menu.h"
 #include <iostream>
 
 
@@ -89,7 +90,7 @@ bool Player::interactionWithMap(Map& map, float time)
 
 
 
-Player_conds Player::control(float time, Map& map, float& CurrentFrame, std::vector<Fucker>& fuckers)
+Player_conds Player::control(float time, Map& map, float& CurrentFrame, std::vector<Fucker>& fuckers, RenderWindow& window)
 {
   
     speed = 0.2;
@@ -125,13 +126,15 @@ Player_conds Player::control(float time, Map& map, float& CurrentFrame, std::vec
 
     update(map, time, fuckers);
 
-
-
     if (!alive)
+    {
         return DEAD;
+    }
 
     if (score == SUCCESS)
+    {
         return SUCCESS;
+    }
 }
 
 void Player::interactionWithEnemy(std::vector<Fucker>& fuckers)

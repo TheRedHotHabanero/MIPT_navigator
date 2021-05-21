@@ -30,7 +30,7 @@ public:
 	void update(Map& map, float time, std::vector<Fucker>& fuckers);
 	bool interactionWithMap(Map& map, float time);
 	void interactionWithEnemy(std::vector<Fucker>& fuckers);
-	Player_conds control(float time, Map& map, float& CurrentFrame, std::vector<Fucker>& fuckers);
+	Player_conds control(float time, Map& map, float& CurrentFrame, std::vector<Fucker>& fuckers, RenderWindow& window);
 	int getScore();
 	void setSpeed(float Speed);
 

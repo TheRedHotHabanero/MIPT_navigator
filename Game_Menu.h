@@ -109,8 +109,8 @@ public:
 
     void show_win_window(RenderWindow& window);
     void show_lose_window(RenderWindow& window);
-    void create_win_window(const string& win_window_);
-    void create_lose_window(const string& lose_window_);
+    Sprite create_win_window(const string& win_window_);
+    Sprite create_lose_window(const string& lose_window_);
     //------------------------------------------------------------------
 
     //void processing_finish_windows(RenderWindow& window);
