@@ -39,7 +39,8 @@ void Check::entering_points() {
     else if (math.returnText().empty())
         cout << "------- ОШИБКА: Введите баллы по математике. -------" << endl;
     else
-        cout << "------- Ваши суммарные баллы: " << Phys_Points + Inf_Points + Bio_Points + Chem_Points
+        cout << "------- Ваши суммарные баллы: "
+             << Phys_Points + Inf_Points + Bio_Points + Chem_Points - 3 * Basic_Points
              << " -------" << endl;
 }
 
@@ -104,7 +105,8 @@ void Check::snap(const string &Table_) {
         output(Table, chemistry_budget, chemistry_contract, Chem_Points);
 }
 
-void Check::output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_, const int& Points_) const {
+void Check::output(ofstream &Table_, multimap<int, string> &budget_, multimap<int, string> &contract_,
+                   const int &Points_) const {
     Table_ << setw(2 * CELL_WIDTH) << "Бюджет:" << "," << " " << endl;
     for (auto &it:budget_) {
         if (it.first <= Points_)
