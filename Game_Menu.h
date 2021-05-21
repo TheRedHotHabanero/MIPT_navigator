@@ -3,6 +3,10 @@
 
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "Player.h"
+#include "Fucker.h"
+#include "map.h"
+#include "Exam.h"
 
 using std::string;
 using namespace sf;
@@ -41,10 +45,12 @@ private:
 
         WINDOW_WIDTH = 1200,
         WINDOW_HEIGHT = 675,
+
+        FINISH_WINDOW_WIDTH = 400,
+        FINISH_WINDOW_HEIGHT = 200
     };
 
-    //const static bool NO = false;
-    //const static bool YES = true;
+ 
 
 protected:
     Image game_menu_background;
@@ -62,7 +68,18 @@ protected:
     Image game_exit_button;
     Texture game_exit_button_texture;
     Sprite game_exit_button_sprite;
+
+    Image win_window;
+    Texture win_window_texture;
+    Sprite win_window_sprite;
+
+    Image lose_window;
+    Texture lose_window_texture;
+    Sprite lose_window_sprite;
+
+
     int menuNum = 0;
+
 public:
 
 
@@ -87,9 +104,19 @@ public:
     void physics_department_button_pressed(RenderWindow& window);
     void game_exit_button_pressed(RenderWindow& window);
     void processing_menu(RenderWindow& window);
+
     //------------------------------------------------------------------
+
+    void show_win_window(RenderWindow& window);
+    void show_lose_window(RenderWindow& window);
+    void create_win_window(const string& win_window_);
+    void create_lose_window(const string& lose_window_);
+    //------------------------------------------------------------------
+
+    //void processing_finish_windows(RenderWindow& window);
+    //bool game_finish(Fucker& fucker1, Fucker& fucker2, Player& player, ExamBar& exam, Map& map, float time);
 };
 
 
 
-#endif //!__GAME__MENU__
+#endif __GAME__MENU__

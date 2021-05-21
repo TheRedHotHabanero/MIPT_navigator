@@ -1,44 +1,87 @@
 #include "Player.h"
+#include <iostream>
 
 
 
-Player::Player(String F, float X, float Y, float A, float B, float W, float H) : Character(F, X, Y, A, B, W, H) {}
+
+Player::Player(String F, float X, float Y, float A, float B, float W, float H) : Character(F, X, Y, A, B, W, H)
+{
+    score = 0;
+    alive = true;
+}
 Player::~Player() {}
+
+
+
+
+void Player::update(Map& map, float time, std::vector<Fucker>& fuckers)
+{
+    switch (direction)
+    {
+    case DOWN: dx = 0;
+        dy = speed;
+        break;
+
+    case UP:   dx = 0;
+        dy = -speed;
+        break;
+
+    case RIGHT:dx = speed;
+        dy = 0;
+        break;
+
+    case LEFT: dx = -speed;
+        dy = 0;
+        break;
+    }
+
+    x += dx * time;
+    y += dy * time;
+
+    speed = 0;
+    sprite.setPosition(x, y);
+
+    interactionWithMap(map, time);
+    interactionWithEnemy(fuckers);
+
+}
+
 
 bool Player::interactionWithMap(Map& map, float time)
 {
-    for (int i = y / 51; i < (y + h) / 51; ++i)
+    for (int i = y / 50; i < (y + h) / 50; ++i)
     {
-        for (int j = x / 51; j < (x + w) / 51; ++j)
+        for (int j = x / 50; j < (x + w) / 50; ++j)
         {
-            if (map.TileMap[i][j] == '0')//если наш квадратик соответствует символу 0 (стена), то проверяем "направление скорости" персонажа:
+            if ((map.TileMap[i][j] == '0') || (map.TileMap[i][j] == ' '))
             {
-                if (dy > 0)//если мы шли вниз,
+                if (dy > 0)
                 {
-                    y = i * 51 - h;//то стопорим координату игрек персонажа. сначала получаем координату нашего квадратика на карте(стены) и затем вычитаем из высоты спрайта персонажа.
+                    y = i * 50 - h;
                 }
                 else if (dy < 0)
                 {
-                    y = i * 51 + 51;//аналогично с ходьбой вверх. dy<0, значит мы идем вверх (вспоминаем координаты паинта)
+                    y = i * 50 + 50;
                 }
                 else if (dx > 0)
                 {
-                    x = j * 51 - w;//если идем вправо, то координата Х равна стена (символ 0) минус ширина персонажа
+                    x = j * 50 - w;
                 }
                 else if (dx < 0)
                 {
-                    x = j * 51 + 51;//аналогично идем влево
+                    x = j * 50 + 50;
                 }
             }
-            //else if (map.TileMap[i][j] == ' ')
-            //{
-            //    float cur_time = time;
-            //    while (time < cur_time + 10000)
-            //    {
-            //        speed = 0;
-            //        sprite.setPosition(300, 300);
-            //    }
-            //}
+           
+            else if (((map.TileMap[i][j] == '3') || (map.TileMap[i][j] == '2')) && score < 1)
+            {
+                ++score;
+                std::cout << score << std::endl;
+            }
+            else if (((map.TileMap[i][j] == 'X') || (map.TileMap[i][j] == '%')) && score < 2)
+            {
+                ++score;
+            }
         }
     }
 
@@ -46,14 +89,11 @@ bool Player::interactionWithMap(Map& map, float time)
 }
 
 
-bool Player::control(float time, float& CurrentFrame, Map& map)
+
+Player_conds Player::control(float time, Map& map, float& CurrentFrame, std::vector<Fucker>& fuckers)
 {
-
-    //if (mode == PATH)
-        speed = 0.2;
-   // else if (mode == EXAM)
-      //  speed = 0.00;
-
+  
+    speed = 0.2;
     CurrentFrame += 0.005f * time;
 
     if (Keyboard::isKeyPressed(Keyboard::Right))
@@ -83,5 +123,35 @@ bool Player::control(float time, float& CurrentFrame, Map& map)
     else
         speed = 0;
 
-    return update(map, time);
+
+    update(map, time, fuckers);
+
+
+
+    if (!alive)
+        return DEAD;
+
+    if (score == SUCCESS)
+        return SUCCESS;
+}
+
+void Player::interactionWithEnemy(std::vector<Fucker>& fuckers)
+{
+    for (int i = 0; i < fuckers.size(); i++)
+    {
+        if (getRect().intersects(fuckers[i].getRect()))
+            alive = false;
+    }
+
+}
+
+
+int Player::getScore()
+{
+    return score;
+}
+
+void Player::setSpeed(float Speed)
+{
+    speed = Speed;
 }

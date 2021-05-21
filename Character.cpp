@@ -4,10 +4,10 @@
 
 
 Character::Character(String F, float X, float Y, float A, float B, float W, float H)
-{  //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ(пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ) пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ Player. пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅ пїЅ, пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
-    File = F;//пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ+пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
-    w = W; h = H;//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
-    x = X; y = Y;//пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+{  //Конструктор с параметрами(формальными) для класса Player. При создании объекта класса мы будем задавать имя файла, координату Х и У, ширину и высоту
+    File = F;//имя файла+расширение
+    w = W; h = H;//высота и ширина
+    x = X; y = Y;//координата появления спрайта
     a = A; b = B;
     dx = 0;
     dy = 0;
@@ -15,10 +15,9 @@ Character::Character(String F, float X, float Y, float A, float B, float W, floa
     direction = 0;
 
 
-    image.loadFromFile(File);
+    image.loadFromFile("game_images/" + File);
     texture.loadFromImage(image);
     sprite.setTexture(texture);
-    //sprite.setTextureRect(IntRect(0, 0, w, h));  //пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ. IntRect - пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     sprite.setTextureRect(IntRect(a, b, w, h));
 }
 
@@ -30,41 +29,10 @@ Sprite Character::get_sprite()
 
 }
 
-bool Character::update(Map& map, float time)
+IntRect Character:: getRect()
 {
-    {
-        switch (direction)
-        {
-        case DOWN: dx = 0;
-            dy = speed;
-            break;
-
-        case UP:   dx = 0;
-            dy = -speed;
-            break;
-
-        case RIGHT:dx = speed;
-            dy = 0;
-            break;
-
-        case LEFT: dx = -speed;
-            dy = 0;
-            break;
-        }
-
-        x += dx * time;
-        y += dy * time;
-
-        speed = 0;
-        sprite.setPosition(x, y);
-        
-        
-        return interactionWithMap(map, time);
-    }
-
+    return IntRect(x, y, w, h);
 }
-
-
 
 
 
