@@ -76,7 +76,6 @@ bool Player::interactionWithMap(Map& map, float time)
             else if (((map.TileMap[i][j] == '3') || (map.TileMap[i][j] == '2')) && score < 1)
             {
                 ++score;
-                std::cout << score << std::endl;
             }
             else if (((map.TileMap[i][j] == 'X') || (map.TileMap[i][j] == '%')) && score < 2)
             {

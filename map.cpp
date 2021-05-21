@@ -5,7 +5,7 @@
 Map::Map(String F)
 {
     File = F;
-    image.loadFromFile("game_images/maps/" + File);
+    image.loadFromFile("../game_images/maps/" + File);
     texture.loadFromImage(image);
     sprite.setTexture(texture);//заливаем спрайт текстурой
 

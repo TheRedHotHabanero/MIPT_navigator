@@ -2,12 +2,12 @@
 
 ExamBar::ExamBar()
 {
-	image.loadFromFile("game_images/exam.png");
+	image.loadFromFile("../game_images/exam.png");
 	t.loadFromImage(image);
 	s.setTexture(t);
 	s.setTextureRect(IntRect(0, 0, 173, 35));
 
-	bar.setFillColor(Color(0, 0, 0));//черный прямоугольник накладывается сверху и появляется эффект отсутствия здоровья
+	bar.setFillColor(Color(0, 0, 0));//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 	max = 80;
 
 	bar.setSize(Vector2f(max, 28));
@@ -15,7 +15,7 @@ ExamBar::ExamBar()
 
 ExamBar:: ~ExamBar() {}
 
-void ExamBar::update(int k)// k-текущее здоровье
+void ExamBar::update(int k)// k-пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
 
 {
 	if (k > 0)
@@ -28,9 +28,9 @@ void ExamBar:: draw(RenderWindow& window)
 	Vector2f center = window.getView().getCenter();
 	Vector2f size = window.getView().getSize();
 
-	s.setPosition(center.x - size.x / 2 + 15, center.y - size.y / 2 + 15);//позиция на экране
+	s.setPosition(center.x - size.x / 2 + 15, center.y - size.y / 2 + 15);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
 	bar.setPosition(center.x - size.x / 2 + 110, center.y - size.y / 2 + 17);
 
-	window.draw(s);//сначала рисуем полоску здоровья
-	window.draw(bar);//поверх неё уже черный прямоугольник, он как бы покрывает её
+	window.draw(s);//пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+	window.draw(bar);//пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ
 }

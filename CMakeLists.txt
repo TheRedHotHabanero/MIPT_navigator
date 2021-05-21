@@ -42,6 +42,9 @@ add_executable(MIPT_navigator
         Counting_Points.h
         Counting_Points.cpp
         TextBar.h
-        TextBar.cpp)
+        TextBar.cpp
+        Exam.cpp
+
+        )
 
 target_link_libraries(MIPT_navigator sfml-graphics sfml-audio)
