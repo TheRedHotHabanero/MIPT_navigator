@@ -77,8 +77,15 @@ void Game_Menu::run_math(RenderWindow& window)
         Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
+            {
                 window.close();
+                Game_Menu new_window;
+                new_window.game_welcome_page("../game_images/game_menu_background.jpg",
+                                             "../images/exit_button.png",
+                                             "../images/kvm.png",
+                                             "../images/kof.png");
+            }
         }
 
  //------------------------------------------pseudo-random direction
@@ -168,8 +175,16 @@ void Game_Menu::run_phys(RenderWindow& window)
         Event event;
         while (window.pollEvent(event))
         {
-            if (event.type == sf::Event::Closed)
+            if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
+            {
                 window.close();
+                Game_Menu new_window;
+                new_window.game_welcome_page("../game_images/game_menu_background.jpg",
+                                             "../images/exit_button.png",
+                                             "../images/kvm.png",
+                                             "../images/kof.png");
+            }
+
         }
 
   
