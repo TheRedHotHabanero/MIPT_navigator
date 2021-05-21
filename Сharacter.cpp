@@ -12,7 +12,7 @@ Character::Character(String F, float X, float Y, float A, float B, float W, floa
 	direction = 0;
 
 
-	image.loadFromFile("images/" + File);
+	image.loadFromFile(File);
 	texture.loadFromImage(image);
 	sprite.setTexture(texture);
 	//sprite.setTextureRect(IntRect(0, 0, w, h)

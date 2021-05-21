@@ -23,6 +23,9 @@ protected:
     Image counting_points_button;
     Texture counting_points_texture;
     Sprite counting_points_sprite;
+
+    SoundBuffer buffer;
+    Sound sound;
 public:
 
     //---------------------------------trick button parameters:
@@ -40,19 +43,18 @@ public:
     //--------------------------------------------------------
 
     //---------------------------------------------------------page params:
-    string title_text_;
-    string font_for_title_;
-    string text_;
+    string title_text_ = "Физтех-школа аэрокосмических технологий";
+    string font_ = "../texts/Font.ttf";
+    string text_ = "../texts/faki.txt";
     string trick_button_ = "../images/tricks/fakt_trick.png";
     string counting_points_button_ = "../images/counting_points_button.png";
     string phystech_background_ = "../images/school_backs/fakt_back.jpg";
     string exit_button_ = "../images/exit_button.png";
     //--------------------------------------------------------------------
 
-    void trick_button_pressed(RenderWindow& window) override;
-    //void counting_points_pressed(RenderWindow& window);
+    void trick_button_pressed() override;
     //---------------------------------------------------------------------
-    //void processing_keys(RenderWindow& window);
+    void processing_keys(RenderWindow& window) override;
     Sprite create_counting_points_button() override;
     Sprite create_trick_button() override;
 };

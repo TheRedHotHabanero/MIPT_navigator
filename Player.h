@@ -2,15 +2,17 @@
 #define __PLAYER__H__
 
 #include "Character.h"
+#include "Fucker.h"
 #include "map.h"
+
+
 
 class Player : public Character
 {
-	//
-	//private:
-	//
-	//	int playerScore;
-	//	bool isShoot;
+private:
+
+	int score;
+
 
 public:
 
@@ -18,7 +20,9 @@ public:
 	~Player();
 
 	bool interactionWithMap(Map& map, float time);
-	bool control(float time, float& CurrentFrame, Map& map);
+	bool control(float time, Map& map, float& CurrentFrame, Fucker& fucker1, Fucker& fucker2);
+	int getScore();
+	void setSpeed(float Speed);
 
 };
 

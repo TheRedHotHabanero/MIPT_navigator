@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(SFML_DIR ../SFML/lib/cmake/SFML)
 
-
 find_package(SFML 2.5 COMPONENTS graphics audio REQUIRED)
 
 add_executable(MIPT_navigator
@@ -39,6 +38,10 @@ add_executable(MIPT_navigator
         inbicst.h
         inbicst.cpp
         lfi.h
-        lfi.cpp)
+        lfi.cpp
+        Counting_Points.h
+        Counting_Points.cpp
+        TextBar.h
+        TextBar.cpp)
 
 target_link_libraries(MIPT_navigator sfml-graphics sfml-audio)

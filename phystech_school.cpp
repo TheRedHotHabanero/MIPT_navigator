@@ -22,23 +22,13 @@ void Phystech_School::create_phystech_school_background(string &phystech_school_
 }
 
 
-void Phystech_School::create_text_title(string &text_)
-{
-    title.setString(text_);
-    title.setFont(font);
-    title.setCharacterSize(TITLE_CHARACTER_SIZE);
-    //title.setColor(Color::Black);
-    title.setPosition(TITLE_POS_X, TITLE_POS_Y);
-}
-
 void Phystech_School::show_school_information(string &font_, string &text_)
 {
     font.loadFromFile(font_);
-    create_text_title(text_);
     //--------------------------------------reading text from file
     string text;
     ifstream reception;
-    reception.open("../input.txt");
+    reception.open(text_);
     getline(reception, text, '\0');
     reception.close();
     //----------------------------------------creating boring text
@@ -51,39 +41,28 @@ void Phystech_School::show_school_information(string &font_, string &text_)
 
 void Phystech_School::welcome_school_page(string &trick_button_,
                                           string &title_text_,
+                                          string &text_,
+                                          string &font_,
                                           string &phystech_background_,
                                           string &exit_button_,
                                           string &counting_points_button_)
 {
     RenderWindow window(VideoMode(WINDOW_WIDTH, WINDOW_HEIGHT),
-                        text_);
+                        String::fromUtf8(title_text_.begin(), title_text_.end()));
 
     create_phystech_school_background(phystech_background_);
     create_exit_button(exit_button_);
-    create_text_title(text_);
-
-    //window.clear();
+    show_school_information(font_, text_);
 
     window.draw(phystech_school_background_sprite);
     window.draw(exit_button_sprite);
     window.draw(create_trick_button());
     window.draw(create_counting_points_button());
     window.draw(title);
+    window.draw(boring_text);
 
     window.display();
-    processing_keys(window,
-                    COUNTING_POINTS_POS_X,
-                    COUNTING_POINTS_POS_Y,
-                    COUNTING_POINTS_WIDTH,
-                    COUNTING_POINTS_HEIGHT,
-                    TRICK_BUTTON_POS_X,
-                    TRICK_BUTTON_POS_Y,
-                    TRICK_BUTTON_WIDTH,
-                    TRICK_BUTTON_HEIGHT,
-                    EXIT_BUTTON_POS_X,
-                    EXIT_BUTTON_POS_Y,
-                    EXIT_BUTTON_WIDTH,
-                    EXIT_BUTTON_HEIGHT);
+    processing_keys(window);
 }
 
 void Phystech_School::exit_button_pressed(RenderWindow &window)
@@ -93,50 +72,16 @@ void Phystech_School::exit_button_pressed(RenderWindow &window)
     menu.phystech_page();
 }
 
-void Phystech_School::counting_points_pressed(RenderWindow &window){}
-
-void Phystech_School::processing_keys(RenderWindow &window,
-                                      int COUNTING_POINTS_POS_X,
-                                      int COUNTING_POINTS_POS_Y,
-                                      int COUNTING_POINTS_WIDTH,
-                                      int COUNTING_POINTS_HEIGHT,
-                                      int TRICK_BUTTON_POS_X,
-                                      int TRICK_BUTTON_POS_Y,
-                                      int TRICK_BUTTON_WIDTH,
-                                      int TRICK_BUTTON_HEIGHT,
-                                      int EXIT_BUTTON_POS_X,
-                                      int EXIT_BUTTON_POS_Y,
-                                      int EXIT_BUTTON_WIDTH,
-                                      int EXIT_BUTTON_HEIGHT)
+void Phystech_School::counting_points_pressed(RenderWindow &window)
 {
-    while (window.isOpen())
-    {
-        Event event;
+    window.close();
+    Chek_Points.main_window(Chek_Points.exit_button_, Chek_Points.check_button_,
+                            Chek_Points.font_, Chek_Points.background_,
+                            Chek_Points.phys_budget_,Chek_Points.chem_budget_,
+                            Chek_Points.inf_budget_,Chek_Points.bio_budget_,
+                            Chek_Points.phys_contract_, Chek_Points.chem_contract_,
+                            Chek_Points.inf_contract_, Chek_Points.bio_contract_,
+                            Chek_Points.Table_);
 
-        if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
-            exit_button_pressed(window);
-
-        if (IntRect(COUNTING_POINTS_POS_X, COUNTING_POINTS_POS_Y,
-                    COUNTING_POINTS_WIDTH, COUNTING_POINTS_HEIGHT).contains(Mouse::getPosition(window)))
-            phystech_school_menu_num = COUNTING_POINTS;
-
-        if (IntRect(TRICK_BUTTON_POS_X, TRICK_BUTTON_POS_Y,
-                    TRICK_BUTTON_WIDTH, TRICK_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-            phystech_school_menu_num = TRICK;
-
-        if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
-                    EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-            phystech_school_menu_num = EXIT;
-
-
-        if (Mouse::isButtonPressed(Mouse::Left))
-        {
-            if (phystech_school_menu_num == TRICK)
-                trick_button_pressed(window);
-            else if (phystech_school_menu_num == EXIT)
-                exit_button_pressed(window);
-            else if (phystech_school_menu_num == COUNTING_POINTS)
-                counting_points_pressed(window);
-        }
-    }
 }
+

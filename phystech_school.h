@@ -5,42 +5,18 @@
 #ifndef MIPT_NAVIGATOR_PHYSTECH_SCHOOL_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <string>
 #include <iostream>
 #include <fstream>
+#include "Counting_Points.h"
 
 using namespace sf;
 using std::string;
 using std::ifstream;
 
-class Phystech_School{
+class Phystech_School {
 protected:
-    //----------------------------------------button`s number:
-    const static int TRICK = 1;
-    const static int EXIT = 2;
-    const static int COUNTING_POINTS = 3;
-    //--------------------------------------------------------
-
-    //--------------------------parameters for counting points:
-    int number_of_subjects = 3;         //number of subjects for summ of points, change if necessary
-    bool computer_science = false;     // if this subject is in summ for points, set it true.
-    bool math = true;
-    bool physics = false;
-    bool russian_language = true;
-    bool biology = false;
-    bool chemistry = false;
-    //-------------------------------------------------------
-
-    //-------------------------------------------------------
-    string title_text;
-    string phystech_background_;
-    string font_for_title;
-    string trick_button_;
-    string counting_points_button_;
-    string text_;
-    string exit_button_;
-    //-------------------------------------------------------
-
     //---------------------------------exit button parameters:
     const static int EXIT_BUTTON_POS_X = 1110;
     const static int EXIT_BUTTON_POS_Y = 600;
@@ -55,13 +31,22 @@ protected:
     const static int WINDOW_HEIGHT = 675;
     //---------------------------------------------------------
 
-    //----------------------------------------title parameters:
-    const static int TITLE_CHARACTER_SIZE = 30;
-    const static int TEXT_CHARACTER_SIZE = 18;
-    const static int TITLE_POS_X = 500;
-    const static int TITLE_POS_Y = 20;
-    const static int BORING_TEXT_POS_X = 200;
-    const static int BORING_TEXT_POS_Y = 200;
+    //------------------------------for future phystech-schools:
+    int COUNTING_POINTS_POS_X;
+    int COUNTING_POINTS_POS_Y;
+    int COUNTING_POINTS_WIDTH;
+    int COUNTING_POINTS_HEIGHT;
+
+    int TRICK_BUTTON_POS_X;
+    int TRICK_BUTTON_POS_Y;
+    int TRICK_BUTTON_WIDTH;
+    int TRICK_BUTTON_HEIGHT;
+    //---------------------------------------------------------
+
+    //------------------------------------------text parameters:
+    const static int TEXT_CHARACTER_SIZE = 20;
+    const static int BORING_TEXT_POS_X = 36;
+    const static int BORING_TEXT_POS_Y = 130;
     Font font;
     Text title;
     Text boring_text;
@@ -84,64 +69,40 @@ protected:
     Texture phystech_school_background_texture;
     Sprite phystech_school_background_sprite;
     //---------------------------------------------------------
-    //------------------------------for future phystech-schools:
-    int COUNTING_POINTS_POS_X;
-    int COUNTING_POINTS_POS_Y;
-    int COUNTING_POINTS_WIDTH;
-    int COUNTING_POINTS_HEIGHT;
 
-    int TRICK_BUTTON_POS_X;
-    int TRICK_BUTTON_POS_Y;
-    int TRICK_BUTTON_WIDTH;
-    int TRICK_BUTTON_HEIGHT;
-    //---------------------------------------------------------
-    int phystech_school_menu_num = 0;
+    Check Chek_Points;
 
 public:
-    //calculation of receipts
-    //virtual void counting_points(int number_of_subjects, int summ);
-
-    //sound playback, but her znaet if I need a function to play sound
-    //virtual void make_sound(const string &sound_);
 
     //------------------------------------------------------creating bottons and background:
     void create_exit_button(string &exit_button_);
+
     void create_phystech_school_background(string &phystech_school_background_);
+
     virtual Sprite create_counting_points_button() = 0;
+
     virtual Sprite create_trick_button() = 0;
-    void create_text_title(string &title_text_, string text_){};
+
     void show_school_information(string &font_, string &text_);
-    void create_text_title(string &text_);
     //-------------------------------------------------------------------------------------
 
-    //the first window of the Phystech School (like welcome_page from menu)
     void welcome_school_page(string &trick_button_,
                              string &title_text_,
+                             string &text_,
+                             string &font_,
                              string &phystech_background_,
                              string &exit_button_,
                              string &counting_points_button_);
-                             //string &font_, string &text_);
 
     //---------------------------------------------------------pressed keys:
-    virtual void trick_button_pressed(RenderWindow &window) = 0;
+    virtual void trick_button_pressed() = 0;
+
     static void exit_button_pressed(RenderWindow &window);
+
     void counting_points_pressed(RenderWindow &window);
     //---------------------------------------------------------------------
 
-    //processing keys
-    void processing_keys(RenderWindow &window,
-                         int COUNTING_POINTS_POS_X,
-                         int COUNTING_POINTS_POS_Y,
-                         int COUNTING_POINTS_WIDTH,
-                         int COUNTING_POINTS_HEIGHT,
-                         int TRICK_BUTTON_POS_X,
-                         int TRICK_BUTTON_POS_Y,
-                         int TRICK_BUTTON_WIDTH,
-                         int TRICK_BUTTON_HEIGHT,
-                         int EXIT_BUTTON_POS_X,
-                         int EXIT_BUTTON_POS_Y,
-                         int EXIT_BUTTON_WIDTH,
-                         int EXIT_BUTTON_HEIGHT);
+    virtual void processing_keys(RenderWindow &window) = 0;
 
 };
 

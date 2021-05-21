@@ -1,0 +1,92 @@
+[
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/main.cpp.o -c /home/mash/MIPT_navigator/main.cpp",
+  "file": "/home/mash/MIPT_navigator/main.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/menu.cpp.o -c /home/mash/MIPT_navigator/menu.cpp",
+  "file": "/home/mash/MIPT_navigator/menu.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/phystech_menu.cpp.o -c /home/mash/MIPT_navigator/phystech_menu.cpp",
+  "file": "/home/mash/MIPT_navigator/phystech_menu.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/Character.cpp.o -c /home/mash/MIPT_navigator/Character.cpp",
+  "file": "/home/mash/MIPT_navigator/Character.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/Fucker.cpp.o -c /home/mash/MIPT_navigator/Fucker.cpp",
+  "file": "/home/mash/MIPT_navigator/Fucker.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/Game_Menu.cpp.o -c /home/mash/MIPT_navigator/Game_Menu.cpp",
+  "file": "/home/mash/MIPT_navigator/Game_Menu.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/Player.cpp.o -c /home/mash/MIPT_navigator/Player.cpp",
+  "file": "/home/mash/MIPT_navigator/Player.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/map.cpp.o -c /home/mash/MIPT_navigator/map.cpp",
+  "file": "/home/mash/MIPT_navigator/map.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/phystech_school.cpp.o -c /home/mash/MIPT_navigator/phystech_school.cpp",
+  "file": "/home/mash/MIPT_navigator/phystech_school.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/faki.cpp.o -c /home/mash/MIPT_navigator/faki.cpp",
+  "file": "/home/mash/MIPT_navigator/faki.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/fbmf.cpp.o -c /home/mash/MIPT_navigator/fbmf.cpp",
+  "file": "/home/mash/MIPT_navigator/fbmf.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/fefm.cpp.o -c /home/mash/MIPT_navigator/fefm.cpp",
+  "file": "/home/mash/MIPT_navigator/fefm.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/fpmi.cpp.o -c /home/mash/MIPT_navigator/fpmi.cpp",
+  "file": "/home/mash/MIPT_navigator/fpmi.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/frkt.cpp.o -c /home/mash/MIPT_navigator/frkt.cpp",
+  "file": "/home/mash/MIPT_navigator/frkt.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/inbicst.cpp.o -c /home/mash/MIPT_navigator/inbicst.cpp",
+  "file": "/home/mash/MIPT_navigator/inbicst.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/lfi.cpp.o -c /home/mash/MIPT_navigator/lfi.cpp",
+  "file": "/home/mash/MIPT_navigator/lfi.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/Counting_Points.cpp.o -c /home/mash/MIPT_navigator/Counting_Points.cpp",
+  "file": "/home/mash/MIPT_navigator/Counting_Points.cpp"
+},
+{
+  "directory": "/home/mash/MIPT_navigator/build",
+  "command": "/bin/x86_64-linux-gnu-g++-9    -g   -std=gnu++17 -o CMakeFiles/MIPT_navigator.dir/TextBar.cpp.o -c /home/mash/MIPT_navigator/TextBar.cpp",
+  "file": "/home/mash/MIPT_navigator/TextBar.cpp"
+}
+]

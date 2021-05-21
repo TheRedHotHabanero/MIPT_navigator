@@ -6,22 +6,15 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
 
-void Faki::trick_button_pressed(RenderWindow &window)
+void Faki::trick_button_pressed()
 {
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "--------------------------ZZZZZZZZZZZZZZZZZZZZZ---------------------------" << std::endl;
     std::cout << "-" << std::endl;
     std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    std::cout << "-" << std::endl;
-    SoundBuffer buffer;
-    Sound sound;
-    buffer.loadFromFile("../sound/fakt.wav");
+
+    buffer.loadFromFile("../sound/fakt.ogg");
     sound.setBuffer(buffer);
     sound.play();
 }
@@ -42,5 +35,34 @@ Sprite Faki::create_counting_points_button()
     counting_points_sprite.setTexture(counting_points_texture);
     counting_points_sprite.setPosition(COUNTING_POINTS_POS_X, COUNTING_POINTS_POS_Y);
     return counting_points_sprite;
+}
+
+void Faki::processing_keys(RenderWindow &window)
+{
+    while (window.isOpen())
+    {
+        Event event;
+        while (window.pollEvent(event))
+        {
+
+            if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
+                exit_button_pressed(window);
+
+            if (IntRect(COUNTING_POINTS_POS_X, COUNTING_POINTS_POS_Y,
+                        COUNTING_POINTS_WIDTH, COUNTING_POINTS_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                counting_points_pressed(window);
+
+            if (IntRect(TRICK_BUTTON_POS_X, TRICK_BUTTON_POS_Y,
+                        TRICK_BUTTON_WIDTH, TRICK_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                trick_button_pressed();
+
+            if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
+                        EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                exit_button_pressed(window);
+        }
+    }
 }
 

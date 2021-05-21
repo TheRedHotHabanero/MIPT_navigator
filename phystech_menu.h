@@ -24,43 +24,33 @@ using std::string;
 class Phystech_Menu
 {
 private:
-    //----------------------------------------button`s number:
-    const static int FRKT = 1;
-    const static int LFI = 2;
-    const static int FAKI = 3;
-    const static int FEFM = 4;
-    const static int FPMI = 5;
-    const static int FBMF = 6;
-    const static int INBICST = 7;
-    const static int EXIT = 8;
-    //--------------------------------------------------------
 
     //---------------------------start info button parameters:
-    const static int SCHOOL_INFO_BUTTON_WIDTH = 355;
-    const static int SCHOOL_INFO_BUTTON_HEIGHT = 192;
+    const static int SCHOOL_INFO_BUTTON_WIDTH = 285;
+    const static int SCHOOL_INFO_BUTTON_HEIGHT = 152;
     //--------------------------------------------------------
 
     //------------------------------------------------------------------
-    const static int FRKT_BUTTON_POS_X = 15;
-    const static int FRKT_BUTTON_POS_Y = 15;
+    const static int FRKT_BUTTON_POS_X = 35;
+    const static int FRKT_BUTTON_POS_Y = 30;
 
-    const static int LFI_BUTTON_POS_X = 425;
-    const static int LFI_BUTTON_POS_Y = 15;
+    const static int LFI_BUTTON_POS_X = 445;
+    const static int LFI_BUTTON_POS_Y = 30;
 
-    const static int FAKI_BUTTON_POS_X = 825;
-    const static int FAKI_BUTTON_POS_Y = 15;
+    const static int FAKI_BUTTON_POS_X = 845;
+    const static int FAKI_BUTTON_POS_Y = 30;
 
-    const static int FEFM_BUTTON_POS_X = 15;
-    const static int FEFM_BUTTON_POS_Y = 250;
+    const static int FEFM_BUTTON_POS_X = 35;
+    const static int FEFM_BUTTON_POS_Y = 265;
 
-    const static int FPMI_BUTTON_POS_X = 425;
-    const static int FPMI_BUTTON_POS_Y = 250;
+    const static int FPMI_BUTTON_POS_X = 445;
+    const static int FPMI_BUTTON_POS_Y = 265;
 
-    const static int FBMF_BUTTON_POS_X = 825;
-    const static int FBMF_BUTTON_POS_Y = 250;
+    const static int FBMF_BUTTON_POS_X = 845;
+    const static int FBMF_BUTTON_POS_Y = 265;
 
-    const static int INBICST_BUTTON_POS_X = 425;
-    const static int INBICST_BUTTON_POS_Y = 475;
+    const static int INBICST_BUTTON_POS_X = 445;
+    const static int INBICST_BUTTON_POS_Y = 490;
     //------------------------------------------------------------------
 
     //---------------------------------exit button parameters:
@@ -115,7 +105,6 @@ protected:
     Texture exit_button_texture;
     Sprite exit_button_sprite;
 
-    int phystechNum = 0;
 public:
 
     //---------------------------------------creating sprites for menu:

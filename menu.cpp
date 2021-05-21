@@ -88,31 +88,27 @@ void Menu::processing_menu(RenderWindow& window)
     while (window.isOpen())
     {
         Event event;
-
-        if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
-            exit_button_pressed(window);
-
-        if (IntRect(START_INFO_BUTTON_POS_X, START_INFO_BUTTON_POS_Y,
-                    START_INFO_BUTTON_WIDTH, START_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-            menuNum = START_INFO;
-
-        if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
-                    EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-            menuNum = EXIT;
-
-        if (IntRect(CHECKING_ODDS_BUTTON_POS_X, CHECKING_ODDS_BUTTON_POS_Y,
-                    CHECKING_ODDS_BUTTON_WIDTH, CHECKING_ODDS_BUTTON_HEIGHT).contains(Mouse::getPosition(window)))
-            menuNum = CHECKING_ODDS;
-
-
-        if (Mouse::isButtonPressed(Mouse::Left))
+        while (window.pollEvent(event))
         {
-            if (menuNum == START_INFO)
-                start_info_button_pressed(window);
-            else if (menuNum == EXIT)
+            if (event.type == Event::Closed || Keyboard::isKeyPressed(Keyboard::Escape))
                 exit_button_pressed(window);
-            else if (menuNum == CHECKING_ODDS)
+
+            if (IntRect(START_INFO_BUTTON_POS_X, START_INFO_BUTTON_POS_Y,
+                        START_INFO_BUTTON_WIDTH, START_INFO_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                start_info_button_pressed(window);
+
+            if (IntRect(EXIT_BUTTON_POS_X, EXIT_BUTTON_POS_Y,
+                        EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
+                exit_button_pressed(window);
+
+            if (IntRect(CHECKING_ODDS_BUTTON_POS_X, CHECKING_ODDS_BUTTON_POS_Y,
+                        CHECKING_ODDS_BUTTON_WIDTH, CHECKING_ODDS_BUTTON_HEIGHT).contains(Mouse::getPosition(window))
+                        & Mouse::isButtonPressed(Mouse::Left))
                 checking_odds_button_pressed(window);
+
         }
+
     }
 }

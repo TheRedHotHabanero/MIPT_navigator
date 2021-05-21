@@ -1,0 +1,3 @@
+/home/mash/MIPT_navigator/build/CMakeFiles/rebuild_cache.dir
+/home/mash/MIPT_navigator/build/CMakeFiles/edit_cache.dir
+/home/mash/MIPT_navigator/build/CMakeFiles/MIPT_navigator.dir
