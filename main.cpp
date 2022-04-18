@@ -5,8 +5,8 @@ using std::cin;
 using std::cout;
 using std::endl;
 
-int main() {
-
+int main()
+{
     Menu MIPT_navigator;
     RenderWindow window;
     MIPT_navigator.welcome_page("../images/menu_background.jpg",

@@ -77,7 +77,6 @@ protected:
     Texture lose_window_texture;
     Sprite lose_window_sprite;
 
-
     int menuNum = 0;
 
 public:
@@ -95,14 +94,14 @@ public:
 
     //------------------------------------------------processing bottons:
 
-    void game_welcome_page(const string& game_menu_background_,
-        const string& game_exit_button_,
-        const string& math_department_button_,
-        const string& physics_department_button_);
+    void game_welcome_page( const string& game_menu_background_,
+                            const string& game_exit_button_,
+                            const string& math_department_button_,
+                            const string& physics_department_button_);
 
     void math_department_button_pressed(RenderWindow& window);
     void physics_department_button_pressed(RenderWindow& window);
-    void game_exit_button_pressed(RenderWindow& window);
+    static void game_exit_button_pressed(RenderWindow& window);
     void processing_menu(RenderWindow& window);
 
     //------------------------------------------------------------------
@@ -111,10 +110,7 @@ public:
     void show_lose_window(RenderWindow& window);
     Sprite create_win_window(const string& win_window_);
     Sprite create_lose_window(const string& lose_window_);
-    //------------------------------------------------------------------
-
-    //void processing_finish_windows(RenderWindow& window);
-    //bool game_finish(Fucker& fucker1, Fucker& fucker2, Player& player, ExamBar& exam, Map& map, float time);
+    //--------------------------------------------------------------------
 };
 
 

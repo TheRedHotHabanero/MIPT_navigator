@@ -43,7 +43,6 @@ private:
     const static int WINDOW_WIDTH = 1200 ;
     const static int WINDOW_HEIGHT = 675;
     //---------------------------------------------------------
-
 protected:
     Image menu_background;
     Texture menu_background_texture;
@@ -60,6 +59,7 @@ protected:
     Image checking_odds_button;
     Texture checking_odds_texture;
     Sprite checking_odds_sprite;
+
 public:
 
     //---------------------------------------creating sprites for menu:
@@ -78,7 +78,7 @@ public:
     static void start_info_button_pressed(RenderWindow& window);           //start info botton
     static void exit_button_pressed(RenderWindow& window);                 //exit botton
     static void checking_odds_button_pressed(RenderWindow& window);        //checking odds botton
-    void processing_menu(RenderWindow& window);                            //processing keys
+    static void processing_menu(RenderWindow& window);                            //processing keys
     //------------------------------------------------------------------
 };
 #define MIPT_NAVIGATOR_MENU_H

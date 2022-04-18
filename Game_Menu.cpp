@@ -1,8 +1,5 @@
 #include "Game_Menu.h"
 
-
-
-
 using namespace sf;
 
 
@@ -109,7 +106,7 @@ void Game_Menu::run_math(RenderWindow& window)
     Umnov_Jr.set_direction(UP);
 
     bool game_alive = true;
-    while (window.isOpen() & game_alive == true)
+    while (window.isOpen())
     {
         counter++;
         float time = clock.getElapsedTime().asMicroseconds();
@@ -343,13 +340,9 @@ void Game_Menu::physics_department_button_pressed(RenderWindow& window)
 }
 
 
-
-
 //OK
 void Game_Menu::game_exit_button_pressed(RenderWindow& window)//������ ������
-{
-    window.close();
-}
+{ window.close(); }
 
 
 
